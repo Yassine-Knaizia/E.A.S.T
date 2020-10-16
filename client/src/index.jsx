@@ -5,6 +5,8 @@ import Navbar from "./components/navbar.jsx"
 import Asidebar from "./components/asidebar.jsx"
 import SignupClient from "./components/client/SignupClient.jsx"
 import SignupServiceProvider from "./components/serviceprovider/SignupServiceProvider.jsx"
+import LoginClient from "./components/client/LoginClient.jsx"
+import LoginServiceProvider from "./components/serviceprovider/LoginServiceProvider.jsx"
 
 class App extends React.Component {
     constructor(props){
@@ -20,7 +22,9 @@ class App extends React.Component {
         </aside>
          <Navbar/> 
         {/* <SignupClient/> */}
-        <SignupServiceProvider />
+        {/* <LoginClient/> */}
+        <LoginServiceProvider/>
+        {/* <SignupServiceProvider /> */}
       </div>
     }
   }
