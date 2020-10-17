@@ -8,8 +8,7 @@ class SignupServiceProvider extends React.Component {
     render() {
         return <div>
  <div className="col-md-6 signup-form-1">
-        <h3>Registration</h3>
-
+        <h3>Service Provider Registration</h3>
         <div className="form-group">
             <input type="text" className="form-control" placeholder="Your First Name " />
         </div>
