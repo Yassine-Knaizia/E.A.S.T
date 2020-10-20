@@ -1,13 +1,10 @@
 
 const initState = {
-  users: [{
-    "a" : 0
-    }
-  ],
+  users: [],
 };
 
 const reducers = {
-  DELETE_POST: (state, action) => {
+  updateUser: (state, action) => {
     let newUsers = state.users.filter((user) => {
       return user.id !== action.id;
     });

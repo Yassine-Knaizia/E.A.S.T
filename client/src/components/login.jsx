@@ -11,7 +11,8 @@ class Login extends React.Component {
             password: "",
             serviceprovider: true,
             client: false,
-            Registration: "Login as a service-provider"
+            Registration: "Login as a service-provider",
+            users:[],
         }
 
         this.serviceprovider = this.serviceprovider.bind(this)
@@ -20,32 +21,32 @@ class Login extends React.Component {
         this.serviceProviderLogin = this.serviceProviderLogin.bind(this)
     }
 
-    clientLogin() {
+    serviceProviderLogin() {
         axios({
-            url: '/api/clients/Login',
+            url: '/api/freelancer/Login',
             method: 'post',
-            data: { 
-                Email: this.state.email, 
-                Password: this.state.password 
+            data: {
+                Email: this.state.email,
+                Password: this.state.password
             }
         }).then(data => {
             data = data
             console.log(data)
-        });
-    }
+        }).catch(err => console.log(err))
+    };
 
-    serviceProviderLogin() {
-        console.log('heyy')
+    clientLogin() {
         axios({
-            url: '/api/freeLancers/Login',
+            url: '/api/clients/Login',
             method: 'post',
-            data: { 
-                Email: this.state.email, 
-                Password: this.state.password 
+            data: {
+                Email: this.state.email,
+                Password: this.state.password
             }
         }).then(data => {
-            data = data.data
-            console.log(data)
+            data = data.data.userData;
+
+
         });
     }
 
@@ -59,7 +60,7 @@ class Login extends React.Component {
     }
     render() {
         const { users } = this.props
-        console.log(this.props)
+        console.log(this.props.users)
         return <div>
             <div className="col-md-6 signup-form-1">
                 <h3 id="h3login">{this.state.Registration}</h3>
@@ -101,13 +102,19 @@ class Login extends React.Component {
     }
 }
 
-
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      updateUser: (id) => dispatch({
+        type: 'updateUser',
+        id
+      })
+    }
+  }
+  
 const stateToProps = (state, ownProps) => {
-    let id = ownProps.match.params;
-    console.log(id)
     return {
         users: state.users
     }
 }
 
-export default connect(stateToProps)(Login)
+export default connect(stateToProps, mapDispatchToProps)(Login)

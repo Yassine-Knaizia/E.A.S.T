@@ -13,7 +13,9 @@ class Market extends React.Component {
             Job Market
         </h1>
     </div> */}
-
+<div className="ashade-home-background ashade-page-background is-video">
+        <video src="video/home-bg.mp4" poster="img/bgs/bg-home01.png" muted autoPlay loop></video>
+      </div>
     <main className="ashade-content-wrap" id="paddingtop">
 		<div className="ashade-content-scroll">
 			<div className="ashade-content">

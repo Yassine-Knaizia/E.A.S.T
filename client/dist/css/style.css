@@ -2675,7 +2675,7 @@ p.ashade-intro {
 /* *Post Job* */
 .PostJobForm{
 	position: relative;
-	top: 290px;
+	top: 31px;
 	margin: auto;
     width: 62%;
     padding: 10px;
@@ -2780,3 +2780,25 @@ p.ashade-intro {
 #paddingtop{
 	padding-top: 138px;
 }
+
+
+
+
+
+@media screen and (max-width: 800px) {
+	.imgpostjob{
+		margin: auto;
+	  width: 60%;
+	  padding: 10px;
+	  margin-bottom: 20px;
+	  width: 100px;
+	  
+	}
+  }
+  @media screen and (min-width: 800px) {
+	.imgpostjob{
+		
+	  margin-bottom: 20px;
+	  
+	}
+  }

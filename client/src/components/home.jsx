@@ -6,6 +6,12 @@ class Home extends React.Component {
 
     render() {
       return  <div>
+        <div className="ashade-page-title-wrap">
+        <h1 className="ashade-page-title">
+            <span>EAST</span>
+            We connect Dots
+        </h1>
+    </div>
           <div className="ashade-home-background ashade-page-background is-video">
         <video src="video/home-bg.mp4" poster="img/bgs/bg-home01.png" muted autoPlay loop></video>
       </div>

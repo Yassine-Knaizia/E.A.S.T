@@ -18,7 +18,7 @@ router.post('/Login', function(req, res, next) {
              /*Signup FreeLancer*/
 
 router.post('/Signup', function(req, res, next) {
-
+    if(Object.keys(req.body).length){
  FreeLancer.SignupFreeLancer(req.body,(result,error)=>{
   if(error){
       if(error.code=="ER_DUP_ENTRY"){
@@ -28,6 +28,9 @@ router.post('/Signup', function(req, res, next) {
           res.send({Signup:true})
         }
     })
+}else{
+    res.send({Signup:false})
+}
 });
  
 module.exports=router
