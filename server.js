@@ -1,49 +1,59 @@
 const express = require('express')
-const { connection } = require("./Data-Base/database")
-const PORT = 3000
+const {connection}=require("./Data-Base/database")
 const app = express()
-var passport = require('passport')
+const clientRouter=require("./ServerRoutes/Client")
+const FreelancerRouter=require("./ServerRoutes/FreeLancer")
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const keys = require("./keys.js");
+var passport = require('passport');
+const PORT = 3000
 
-app.use(express.json());
+app.use(express.json()); 
 app.use(express.static(__dirname + '/client/dist'));
 
-passport.use(
+          /*Routes*/
+
+app.use('/api/clients', clientRouter);
+app.use('/api/freeLancers', FreelancerRouter);
+
+        /*Server Connection*/
+
+app.get("*",(req,res)=>{
+     res.sendFile(__dirname +"/client/dist/index.html")
+   }) 
+   
+        /*Google Authentication */
+   passport.use(
     new GoogleStrategy(
         {
             clientID: keys.googleClientID,
             clientSecret: keys.googleClientSecret,
-            callbackURL: '/auth/google/callback'
+            callbackURL: 'http://localhost:3000/auth/google/callback'
         },
-        accessToken => {
+        (request, accessToken, refreshToken, profile, done) => {
             console.log(accessToken);
-        }
-    )
+            console.log(refreshToken);
+            console.log(profile);   
+        })
 );
 
 app.get('/auth/google',
     passport.authenticate('google', {
-        scope : ['https://www.googleapis.com/auth/plus.login']
+        scope: ['https://www.googleapis.com/auth/userinfo.profile',
+                'https://www.googleapis.com/auth/userinfo.email'],
+        accessType: 'offline', approvalPrompt: 'force'
     })
 );
-app.get('/auth/google/callback', 
-  passport.authenticate('google', { failureRedirect: '/login' }),
-  function(req, res) {     
-    res.redirect('/');
-  });
 
-
-// app.get('/api/current_user', (req, res) => {
-//     res.send(req.user);
-//     console.log(req.user)
-//   });
-
-app.post('/login', function (req, res) {
-    res.send(req.body);
-});
-
-app.listen(PORT, function (err) {
-    if (err) console.log(err);
-    console.log("Server listening on PORT", PORT);
+app.get('/auth/google/callback',
+    passport.authenticate('google', {
+        failureRedirect: '/Login'
+    }),
+    (req, res) => {
+        res.redirect('/');
+    });
+   
+app.listen(PORT, function(err){ 
+    if (err) console.log(err); 
+    console.log("Server listening on PORT", PORT); 
 }); 

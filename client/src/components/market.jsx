@@ -1,6 +1,5 @@
 import React from "react"
 import Footer from "./footer.jsx"
-import Asidebar from "./asidebar.jsx"
 class Market extends React.Component {
     constructor(props){
         super(props)
@@ -8,14 +7,14 @@ class Market extends React.Component {
 
     render() {
       return <div>
-  <div className="ashade-page-title-wrap">
+    {/* <div className="ashade-page-title-wrap">
         <h1 className="ashade-page-title">
             <span>What We are offering</span>
             Job Market
         </h1>
-    </div>
+    </div> */}
 
-    <main className="ashade-content-wrap">
+    <main className="ashade-content-wrap" id="paddingtop">
 		<div className="ashade-content-scroll">
 			<div className="ashade-content">
 				<section className="ashade-section">
@@ -137,18 +136,12 @@ class Market extends React.Component {
 									</div>
 								</div>
                             </div>
-                            {/* <!-- .ashade-service-card-grid --> */}
                         </div>
-                        {/* <!-- .ashade-col --> */}
                     </div>
-                    {/* <!-- .ashade-row --> */}
 				</section>
-				
-			
-			{/* <!-- Footer --> */}
-			<Footer/>
+
+	
         </div>
-        {/* <!-- .ashade-content-scroll --> */}
        </div>
 	</main>
     
@@ -158,10 +151,9 @@ class Market extends React.Component {
             <span>Top</span>
         </div>
     </div>
-
-    {/* <!-- Aside Bar --> */}
-   
-      
+      		
+			{/* <!-- Footer --> */}
+			<Footer/>
       </div>;
     }
   }

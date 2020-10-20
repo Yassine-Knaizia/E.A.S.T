@@ -1,11 +1,21 @@
 import React from "react"
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 class Navbar extends React.Component {
     constructor(props){
         super(props)
+        this.state={
+            
+        }
     }
 
     render() {
       return <div>
+<Router>
         <header id="ashade-header">
         <div className="ashade-header-inner">
             <div className="ashade-logo-block">
@@ -18,12 +28,8 @@ class Navbar extends React.Component {
                     <ul className="main-menu">
                         <li className="menu-item-has-children">
                             <a href="#">Home</a>
-                            <ul className="sub-menu">
-                                <li><a href="index.html">Home Video</a></li>
-                                <li><a href="home02.html">Home Slider</a></li>
-                                <li><a href="home03.html">Home Static</a></li>
-                                <li><a href="maintenance.html">Maintenance</a></li>
-                            </ul>
+    
+                         
                         </li>
 						<li className="menu-item-has-children">
                             <a href="#">Works</a>
@@ -137,7 +143,7 @@ class Navbar extends React.Component {
                         </li>
                     </ul>
                 </nav>
-                <div className="ashade-mobile-header"><a href="#" className="ashade-mobile-menu-button"><i className="la la-bars"></i></a>
+                <div className="ashade-mobile-header">
                 <a className="ashade-aside-toggler" href="#" >
                     <span className="ashade-aside-toggler__icon01"></span>
                     <span className="ashade-aside-toggler__icon02"></span>
@@ -146,7 +152,7 @@ class Navbar extends React.Component {
             </div>
         </div>
     </header>
-    
+</Router>
       </div>;
     }
   }

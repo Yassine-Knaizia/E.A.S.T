@@ -1,5 +1,10 @@
 module.exports = {
     entry: __dirname + '/client/src/index.jsx',
+    
+    devServer: {
+        inline: false,
+        contentBase: "./dist",
+    },
     module: {
       rules: [
         {

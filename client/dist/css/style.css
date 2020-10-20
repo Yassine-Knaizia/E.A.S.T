@@ -1,4 +1,72 @@
+/*
+ * Author: Shadow Themes
+ * Author URL: http://shadow-themes.com
+ * Name: Ashade Photography
+ * Version: 1.1
+ * License: Themeforest
+ *
+ * Table of Contents
+   -----------------
+	01. GENERAL
+		1.1. General
+		1.2. Overlays
+		1.3. Grid
+		1.4. Section
+		1.5. Format
+		1.6. Disable Selection
+		1.7. Ashade Cursor
+	02. TYPOGRAPHY
+	03. FORMS AND FIELDS
+	04. HEADER
+		4.1. Header
+		4.2. Logo
+		4.3. Navigation
+		4.4. Main Menu
+	05. CONTENT
+		5.1. Content
+		5.2. Page Title
+		5.3. Back Button
+			5.3.1. Back Button
+			5.3.2. Before Load State
+			5.3.3. Normal State
+			5.3.4. Hover State
+			5.3.5. Remove to Inactive State
+	06. FOOTER
+	07. ASIDE BAR
+		7.1. Aside
+		7.2. Aside Widgets
+			7.2.1. Aside Widgets
+			7.2.2. About Widget
+			7.2.3. Contacts Widget
+	08. HOME TEMPLATE
+	09. ALBUMS LISTING
+		9.1. Albums Listing
+		9.2. Albums Grid
+		9.3. Albums Carousel
+		9.4. Albums Slider
+			9.4.1. Albums Slider
+			9.4.2. Slide Button
+			9.4.3. Slide Title
+			9.4.4. Slider Navigation
+	10. ALBUMS POSTS
+		10.1. Albums Posts
+		10.2. Bricks Layout
+		10.3. Adjusted
+	11. ELEMENTS
+		11.1. Elements
+		11.2. Contact Elements
+		11.3. Services Block
+		11.4. Testimonials Grid
+		11.5. Testimonials Carousel
+		11.6. Maintenance Page
+		11.7. Ashade Kenburns
+		11.8. Counter Item
+		11.9. Ashade Before After
+ * 
+ ****************************************/
 
+/* 01. GENERAL
+   ----------- */
 * {
     box-sizing: border-box;
     outline: none;
@@ -194,52 +262,6 @@ body.has-spotlight:before {
     margin: 0 10px;
     width: calc(33.33% - 20px);
 }
-/* --- Signup --- */
-.signup-form-1 {
-    background: #282726;
-	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-	border: solid;
-	max-width: 1000px;
-	margin: auto;
-    width: 62%;
-	padding: 10px;
-	margin-top: 200px;
-}
-
-#btn {
-	position: relative;
-	left: 40%;
-    
-}
-#forgetpass{
-	position: relative;
-	left: 40%;
-	top: 7px;
-}
-
-.select {
-	display: block;
-	width: 100%;
-	height: 50px;
-	color: #808080;
-	background: rgba(0,0,0,0);
-	border: 2px solid #313133;
-	border-radius: 0;
-	padding: 15px 20px 15px 20px;
-	margin: 0 0 20px 0;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 16px;
-	transition: background 0.3s, border 0.3s;
-}
-
-
-
-
-
-
-
 
 /* --- Section --- */
 #ashade-home-works p.ashade-intro,
@@ -411,8 +433,8 @@ header#ashade-header a,
 .ashade-cursor.int-grab-v.int-lightbox span.ashade-cursor-slider:before {
 	transform: translate(-40px, -15px);
 }
-.ashade-cursor.int-grab-h:int-lightbox span.ashade-cursor-slider:after,
-.ashade-cursor.int-grab-v:int-lightbox span.ashade-cursor-slider:after {
+.ashade-cursor.int-grab-h:.int-lightbox span.ashade-cursor-slider:after,
+.ashade-cursor.int-grab-v:.int-lightbox span.ashade-cursor-slider:after {
 	transform: translate(40px, -15px);
 }
 
@@ -2649,4 +2671,112 @@ p.ashade-intro {
 	width: 100%;
 	height: 100%;
 	transform: translateX(5px);
+}
+/* *Post Job* */
+.PostJobForm{
+	position: relative;
+	top: 290px;
+	margin: auto;
+    width: 62%;
+    padding: 10px;
+}
+#selectFiled{
+	display: block;
+    width: 100%;
+    height: 50px;
+    color: #808080;
+    background: rgba(0,0,0,0);
+    border: 2px solid #313133;
+    border-radius: 0;
+    padding: 15px 20px 15px 20px;
+    margin: 0 0 20px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    transition: background 0.3s, border 0.3s;
+}
+/* --- Signup --- */
+  
+  @media screen and (max-width: 800px) {
+	.signup-form-1 {
+		background: #282726;
+		box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+		border: solid 1px;
+		max-width: 1000px;
+		margin: auto;
+		width: 95%;
+		padding: 10px;
+		margin-top: 200px;
+		
+	}
+  }
+  @media screen and (min-width: 800px) {
+	.signup-form-1 {
+		background: #282726;
+		box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+		border: solid 1px;
+		max-width: 1000px;
+		margin: auto;
+		width: 40%;
+		padding: 10px;
+		margin-top: 200px;
+	}
+
+  }
+
+
+#btn {
+	position: relative;
+	left: 40%;
+    
+}
+#forgetpass{
+	position: relative;
+	left: 40%;
+	top: 7px;
+}
+
+/* ///Login Signup inputs// */
+
+#h3login{
+	text-align: center;
+}
+.LoginSignupInp{
+	display: block;
+    width: 100%;
+    height: 50px;
+    color: #808080;
+    background: rgba(0,0,0,0);
+    border: 2px solid #313133;
+    border-radius: 0;
+    padding: 15px 20px 15px 20px;
+    margin: 0 0 20px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    transition: background 0.3s, border 0.3s;
+}
+
+/* ////Switch-Consumer Btn/// */
+.SwitchConsumer{
+	background: #282726;
+	margin-bottom: 12px;
+	
+}
+
+#switchbtn1{
+	padding: 10px;
+	float: right;
+
+}
+
+#switchbtn2{
+	padding: 10px;
+	float: left;
+}
+
+#paddingtop{
+	padding-top: 138px;
 }
