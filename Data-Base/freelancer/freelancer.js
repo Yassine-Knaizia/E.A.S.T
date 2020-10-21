@@ -11,7 +11,6 @@ const loginFreeLancer=async (req,callback)=>{
            if(results.length){
                userData=results[0]
                password=results[0].password
-               console.log(results)
                {bcrypt.compareSync(req.Password, password)?callback({error:null,userData}):callback({error:"Wrong Password",userData:null})}
            }else{
                callback({error:"Email Unvalid",userData:null,})
@@ -28,9 +27,9 @@ const loginFreeLancer=async (req,callback)=>{
 
 const SignupFreeLancer=async (req,callback)=>{
   try{
-    if(req.password){
+    if(req.Password){
       var hash = bcrypt.hashSync(req.Password, salt);
-      var query=`INSERT INTO Clients (FisrtName,LastName,Email,password,Gender,Age,City,Adresse,Field) values ('${req.FisrtName}','${req.LastName}','${req.Email}','${hash}','${req.Gender}',${req.Age},'${req.City}','${req.Adresse}','${req.Field}');`
+      var query=`INSERT INTO Freelancers (FirstName,LastName,Email,password,Gender,Age,City,Adresse,Field) values ('${req.FirstName}','${req.LastName}','${req.Email}','${hash}','${req.Gender}',${req.Age},'${req.City}','${req.Adresse}','${req.Field}');`
       connection.query(query, function (error, results, fields) {callback(results,error)});
     }
     ////dont forget this

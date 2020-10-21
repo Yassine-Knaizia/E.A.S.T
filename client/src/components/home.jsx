@@ -1,15 +1,16 @@
 import React from "react"
+
 class Home extends React.Component {
     constructor(props){
         super(props)
     }
 
-    render() {
+    render() {    
       return  <div>
         <div className="ashade-page-title-wrap">
         <h1 className="ashade-page-title">
             <span>EAST</span>
-            We connect Dots
+           we connect dots
         </h1>
     </div>
           <div className="ashade-home-background ashade-page-background is-video">
@@ -55,5 +56,5 @@ class Home extends React.Component {
       </div>
     }
   }
-
+  
 export default Home

@@ -9,19 +9,15 @@ import JobsPosted from "./components/client/jobsposted.jsx"
 import Jobsapplied from "./components/serviceprovider/Jobsapplied.jsx"
 import PostJob from "./components/client/postjob.jsx"
 import Signup from "./components/Signup.jsx"
-import Login from "./components/Login.jsx"
+import Login from "./components/login.jsx"
 import About from "./components/about.jsx"
 import ProfileSP from "./components/serviceprovider/serviceProviderprofil/serviceproviderprofil.jsx"
 import ClientProfile from "./components/client/clientprofile/clientprofil.jsx"
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
-import rootReducer from './reducers/rootReducer.js'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route,Link} from "react-router-dom";
+              ////Redux///
+import {Provider} from "react-redux"
+import {createStore} from "redux"
+import {rootReducer} from "../../Redux/redux"
 
 class App extends React.Component {
     constructor(props){
@@ -33,14 +29,14 @@ class App extends React.Component {
     render() {
       return <div>
       <Router>
-        <Navbar/>
+      <Navbar/>
         <aside id="ashade-aside">
          <Asidebar/>
          </aside> 
-         
+         <Switch>
          <Route exact path="/"  component={Home}/>
          <Route path="/About"  component={About}/>
-         <Route path="/Login" component={Login} />
+         <Route path="/Login" component={Login}/>
          <Route path="/Signup" component={Signup}/>
          <Route path="/AccountS" component={ProfileSP}/>
          <Route path="/AccountC" component={ClientProfile}/>
@@ -48,12 +44,12 @@ class App extends React.Component {
          <Route path="/Jobsapplied" component={Jobsapplied}/>
          <Route path="/PostJob" component={PostJob}/>
          <Route path="/JobMarket" component={Market}/>
+         </Switch>
       </Router>
       </div>
     }
   }
+const store=createStore(rootReducer)
 
-  const store = createStore(rootReducer);
+ReactDOM.render(<Provider store={store}><App/></Provider>,document.getElementById('app'))
 
-  ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('app'));
-  

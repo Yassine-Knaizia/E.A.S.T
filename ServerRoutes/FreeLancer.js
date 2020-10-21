@@ -5,7 +5,7 @@ const FreeLancer=require("../Data-Base/freelancer/freelancer")
              /*Login FreeLancer*/
 
 router.post('/Login', function(req, res, next) {
-
+console.log(req.body)
  FreeLancer.loginFreeLancer(req.body,(result,error)=>{
      if(result.userData){
          delete result.userData.password
@@ -18,6 +18,7 @@ router.post('/Login', function(req, res, next) {
              /*Signup FreeLancer*/
 
 router.post('/Signup', function(req, res, next) {
+
     if(Object.keys(req.body).length){
  FreeLancer.SignupFreeLancer(req.body,(result,error)=>{
   if(error){

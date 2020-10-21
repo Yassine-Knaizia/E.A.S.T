@@ -2200,7 +2200,9 @@ p.ashade-intro {
     max-width: 735px;
     text-align: center;
     display: block;
-    margin: 0 auto 50px auto;
+	margin: 0 auto 50px auto;
+	position: relative;
+    top: 12px;
 }
 
 .ashade-contact-details__list {
@@ -2781,9 +2783,9 @@ p.ashade-intro {
 	padding-top: 138px;
 }
 
-
-
-
+#login-signup-header{
+	text-align: center;
+}
 
 @media screen and (max-width: 800px) {
 	.imgpostjob{

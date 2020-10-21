@@ -29,7 +29,6 @@ class Login extends React.Component {
                 Password: this.state.password
             }
         }).then(data => {
-            data = data
             console.log(data)
         }).catch(err => console.log(err))
     };

@@ -1,5 +1,6 @@
-CREATE TABLE Clients (id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-     FisrtName VARCHAR(20) ,
+CREATE TABLE Clients (
+     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+     FirstName VARCHAR(20) ,
      LastName VARCHAR(20),
      Email VARCHAR(50)  ,
      Password VARCHAR(100),
