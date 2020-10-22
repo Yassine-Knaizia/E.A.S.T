@@ -17,7 +17,6 @@ class PostJob extends React.Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    console.log("i'm here");
     var jobData = {
       jobTitle: this.state.jobTitle,
       fields: this.state.fields,
@@ -33,6 +32,7 @@ class PostJob extends React.Component {
         console.error(e);
       });
   }
+
   handleChange(e) {
     var name = e.target.name;
     this.setState({
@@ -140,4 +140,4 @@ class PostJob extends React.Component {
   }
 }
 
-export default PostJob;
+export default PostJob

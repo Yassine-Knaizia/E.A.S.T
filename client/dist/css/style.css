@@ -269,6 +269,8 @@ section.ashade-section {
 	margin-bottom: 150px;
 	display: block;
 	width: 100%;
+	position: relative;
+	top: 200px;
 }
 .ashade-content section.ashade-section:last-child {
 	margin-bottom: 0;
@@ -2799,8 +2801,202 @@ p.ashade-intro {
   }
   @media screen and (min-width: 800px) {
 	.imgpostjob{
-		
 	  margin-bottom: 20px;
 	  
 	}
   }
+
+/* //////Job Detail component //// */
+#DetailJobdescription{
+	position: relative;
+	top: 120px;
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+}
+#DetailJobTitle{
+  position: relative;
+  top: 100px;
+margin: auto;
+width: 80%;
+padding: 10px;
+}
+#detailsubmitbtn{
+  position: relative;
+  top: 100px;
+margin: auto;
+width: 80%;
+padding: 10px;
+}
+#detailjobimg{
+  position: relative;
+  top: 85px;
+margin: auto;
+width: 80%;
+padding: 10px;
+}
+#detailtextarea{
+  width: 100%;
+height: 150px;
+padding: 12px 20px;
+box-sizing: border-box;
+border: 2px solid #FFD300;
+border-radius: 4px;
+background-color: #f8f8f8;
+resize: none;
+}
+#detailcite{
+	  position: relative;
+	  margin: auto;
+	  top: 100px;
+	  left: 150px;
+  }
+  #detailblock{
+	  position: relative;
+	  left: 50px;
+	  width: 100%;
+  }
+  @media screen and (min-width: 1400px) {
+	  #detailcite{
+		  position: relative;
+		  margin: auto;
+		  top: 100px;
+		  left: 200px;
+	  }
+	}
+	@media screen and (max-width: 600px) {
+	  #detailcite{
+		  position: relative;
+		  margin: auto;
+		  top: 100px;
+		  left: 70px;
+	  }
+	}
+/* //////Modal/// */
+
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,900);
+@import url(https://fonts.googleapis.com/css?family=Audiowide);
+
+/*==================================== 
+Our Modal Window styles
+=====================================*/
+
+.modal {
+box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+display: inline-block;
+padding: 1em;
+}
+
+@media (min-width: 43.75em) {
+.modal {
+  padding: 1.5em;
+}
+}
+#modalbutton{
+  background: #808080;
+  width: 50%;
+}
+.modal > label {
+background: #FFD300;
+border: 1px solid #f0c600;
+border-radius: .2em;
+color: #000000;
+cursor: pointer;
+display: inline-block;
+font-weight: bold;
+padding: 0.75em 1.5em;
+text-shadow: 1px 1px 1px #fff;
+transition: all 0.55s;
+}
+
+.modal > label:hover {
+transform: scale(0.97);
+}
+
+.modal__overlay {
+background: #000000;
+bottom: 0;
+left: 0;
+position: fixed;
+right: 0;
+text-align: center;
+text-shadow: none;
+top: 0;
+z-index: 600;
+}
+
+.modal__wrap {
+padding: 1em 0;
+position: relative;
+margin: 0 auto;
+max-width: 500px;
+width: 90%;
+}
+
+@media (min-width: 50em) {
+.modal__wrap {
+  padding: 1.75em;
+}
+}
+
+@media (min-height: 37.5em) {
+.modal__wrap {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -80%);
+}
+}
+
+.modal__wrap label {
+background: #FFD300;
+border-radius: 50%;
+color: #000000;
+cursor: pointer;
+display: inline-block;
+height: 1.5em;
+line-height: 1.5;
+position: absolute;
+right: .5em;
+top: .5em;
+width: 1.5em;
+}
+
+.modal__wrap h2 {
+color: #FFD300;
+margin-bottom: 1em;
+text-transform: uppercase;
+}
+
+.modal__wrap p {
+color: #FFD300;
+text-align: justify;
+}
+
+.modal input:focus ~ label {
+transform: scale(0.97);
+}
+
+#modal__trigger{
+position: absolute;
+top: -1000px;
+}
+
+.modal__overlay {
+opacity: 0;
+transform: scale(0.5);
+transition: all 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+z-index: -100;
+}
+
+input:checked ~ .modal__overlay {
+opacity: 1;
+transform: scale(1);
+z-index: 800;
+}
+#test0{
+  position: relative;
+  top: 300px;
+  left: 300px;
+}

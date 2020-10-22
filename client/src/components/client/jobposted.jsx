@@ -1,9 +1,14 @@
 import React from "react"
+// import JobDetails from "../jobdetails.jsx";
 
 class PostedJob extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.state = {
+      view: "PostedJob",
+    }
   }
+
   render() {
     return (
       <div className="ashade-service-card">
@@ -18,11 +23,10 @@ class PostedJob extends React.Component {
             </h4>
           </div>
         </div>
-        {/* <!-- .ashade-service-card__head --> */}
         <div className="ashade-service-card__content">
           <p>{this.props.jobDescription}</p>
           <div className="align-right">
-            <a href="gallery-masonry-4columns.html" className="ashade-learn-more">Read More</a>
+            <a onClick={this.props.changeView} className="ashade-learn-more">Read More</a>
           </div>
         </div>
       </div>

@@ -65,4 +65,14 @@ router.get("/postedJobs", (req, res) => {
     })
 })
 
+router.get("/postedJobs/:id", async (req, res) => {
+  try {
+    const jobs = await Jobs.findOne({ _id: req.params.id });
+    res.send(jobs);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+});
+
 module.exports = router;

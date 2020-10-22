@@ -13,6 +13,7 @@ import Login from "./components/login.jsx"
 import About from "./components/about.jsx"
 import ProfileSP from "./components/serviceprovider/serviceProviderprofil/serviceproviderprofil.jsx"
 import ClientProfile from "./components/client/clientprofile/clientprofil.jsx"
+import JobDetails from "./components/JobDetails.jsx"
 import {BrowserRouter as Router, Switch, Route,Link} from "react-router-dom";
               ////Redux///
 import {Provider} from "react-redux"
@@ -44,6 +45,7 @@ class App extends React.Component {
          <Route path="/Jobsapplied" component={Jobsapplied}/>
          <Route path="/PostJob" component={PostJob}/>
          <Route path="/JobMarket" component={Market}/>
+         <Route path="/JobDetails" component={JobDetails}/>
          </Switch>
       </Router>
       </div>
