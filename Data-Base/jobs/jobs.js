@@ -17,5 +17,5 @@ const retrieveJobs = (callback) => {
 
 module.exports = { 
     saveJobs,
-    retrieveJobs
+    retrieveJobs,
 };

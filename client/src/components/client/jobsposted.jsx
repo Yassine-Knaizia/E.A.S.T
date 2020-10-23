@@ -10,7 +10,6 @@ class PostedJobs extends React.Component {
     super(props);
     this.state = {
       jobs: [],
-      view : "PostedJob"
     }
   }
 
@@ -26,12 +25,6 @@ class PostedJobs extends React.Component {
       console.log(error)
     });
   }
-
-  // changeView(view) {
-  //   this.setState({
-  //     view: view
-  //   });
-  // }
 
   render() {
     return <div>

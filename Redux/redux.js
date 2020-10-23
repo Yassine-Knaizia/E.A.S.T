@@ -8,16 +8,26 @@ const initState = {
     Gender: "",
     Age: 0,
     City: "",
-    Field: ""
+    Field: "",
+  },
+  jobs : {
+    client_id : "",
+    client_name : "", 
+    jobTitle : "",
+    fields : "",
+    imgUrl : "",
+    jobDescription : "",
+    budget : "",
   }
+
 }
 
 const reducers = {
   updatedata: (state, action) => {
-    console.log(state)
     return {
       ...state,
-      user: action.value
+      user: action.value,
+      jobs : action.value,
     }
   },
 };

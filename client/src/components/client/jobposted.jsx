@@ -1,11 +1,9 @@
 import React from "react"
-// import JobDetails from "../jobdetails.jsx";
 
 class PostedJob extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: "PostedJob",
     }
   }
 
@@ -26,7 +24,7 @@ class PostedJob extends React.Component {
         <div className="ashade-service-card__content">
           <p>{this.props.jobDescription}</p>
           <div className="align-right">
-            <a onClick={this.props.changeView} className="ashade-learn-more">Read More</a>
+            <a className="ashade-learn-more">Read More</a>
           </div>
         </div>
       </div>

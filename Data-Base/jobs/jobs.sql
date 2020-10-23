@@ -5,5 +5,5 @@ CREATE TABLE Jobs (
      fields VARCHAR(50)  ,
      imgUrl VARCHAR(200),
      jobDescription VARCHAR(1000),
-     foreign key(client_id) references Clients(id)
+     budget int,
 );

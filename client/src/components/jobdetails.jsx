@@ -6,7 +6,7 @@ class JobDetails extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            user : this.props.user,
+            jobs : this.props.jobs,
         }
     }
 
@@ -18,7 +18,7 @@ class JobDetails extends React.Component {
                     <img src={this.props.imgUrl} />
                 </div>
             </div>
-            <cite id="detailcite"><a>{this.props.clientName}</a></cite>
+            <cite id="detailcite"><a>{this.props.client_name}</a></cite>
             <div className="ashade-page-title-wrap">
                 <h1 className="ashade-page-title">
                     <span>don't miss this opportunity</span>
@@ -63,7 +63,7 @@ class JobDetails extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-      user:state.user
+      jobs :state.jobs
     }
   }
 
