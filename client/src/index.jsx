@@ -19,6 +19,7 @@ import {BrowserRouter as Router, Switch, Route,Link} from "react-router-dom";
 import {Provider} from "react-redux"
 import {createStore} from "redux"
 import {rootReducer} from "../../Redux/redux"
+import EditClientProfile from "./components/client/clientprofile/editClientProfile.jsx"
 
 class App extends React.Component {
     constructor(props){
@@ -46,6 +47,7 @@ class App extends React.Component {
          <Route path="/PostJob" component={PostJob}/>
          <Route path="/JobMarket" component={Market}/>
          <Route path="/JobDetails" component={JobDetails}/>
+         <Route path="/EditProfile" component={EditClientProfile}/>
          </Switch>
       </Router>
       </div>

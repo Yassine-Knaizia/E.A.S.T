@@ -55,24 +55,29 @@ router.post("/postJob", (req, res) => {
   }
 });
 
+/*Get all Job*/
 router.get("/postedJobs", (req, res) => {
-    Jobs.retrieveJobs((result, error) => {
-      if(result) {
+  Jobs.retrieveJobs((result, error) => {
+    if (result) {
+      res.send(result)
+    } else {
+      res.send(error)
+    }
+  })
+})
+
+
+/*Update Client Profile*/
+
+router.post("/editProfile", (req, res) => {
+  console.log(req.body)
+    Client.updateProfile(req.body, (result, error) => {
+      if (result) {
         res.send(result)
       } else {
         res.send(error)
       }
     })
-})
-
-router.get("/postedJobs/:id", async (req, res) => {
-  try {
-    const jobs = await Jobs.findOne({ _id: req.params.id });
-    res.send(jobs);
-  } catch (error) {
-    console.log(error);
-    res.status(500).json(error);
-  }
 });
 
 module.exports = router;

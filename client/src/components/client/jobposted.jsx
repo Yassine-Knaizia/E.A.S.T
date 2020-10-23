@@ -11,9 +11,7 @@ class PostedJob extends React.Component {
     return (
       <div className="ashade-service-card">
         <div className="ashade-service-card__head">
-          <div className="ashade-service-card__image">
-            <img src={this.props.jobImageUrl} />
-          </div>
+        <div className="ashade-service-card__image"><img src="https://pbs.twimg.com/profile_images/758084549821730820/_HYHtD8F.jpg"/></div>
           <div className="ashade-service-card__label">
             <h4>
               <span>{this.props.jobField}</span>
