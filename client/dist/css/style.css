@@ -2984,47 +2984,51 @@ z-index: 800;
 		border: solid;
 		border-color: grey;
 		position: relative;
-		top: 147px;
-		left: 150px;
-		width: 545px;
-		height: 841px;
+		top: 196px;
+		left: 360px;
+		width: 960px;
+		height: 972px;
 	}
 	#profilePicture{
-		max-width: 90%;
+		width: 313px;
+		height: auto;
+		display: block;
 		position: relative;
-		left: 28px;
-		top: 27px;
+		left: 315px;
+		top: 46px;
+		border: solid;
+		border-radius: 295px;
 	}
 	#inputContainer {
-		width: 500px;
+		width: 650px;
 		position: relative;
-		left: 19px;
+		left: 127px;
+		top: 38px;
 	}
 	#editButton {
 		position: relative;
-    	left: 210px;
-		top: -2px;
+		left: 374px;
+		top: 72px;
 	}
 	#profileSetting {
 		position: relative;
-    	top: -479px;
-    	text-align: center;
+		top: -137px;
+		text-align: center;
 	}
 
 	.gif {
 		position: relative;
-   		left: 650px;
-    	top: -765px;
+		left: 1149px;
+		top: -439px;
 }
 	}
 	.file {
 		position: relative;
 		width: 229px;
-		left: 155px;
+		left: 363px;
 		font-size: 13px;
-		top: 50px;
+		top: 89px;
 	}
-
 }
 
 

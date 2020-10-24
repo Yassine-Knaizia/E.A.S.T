@@ -4,7 +4,6 @@ const Client = require("../Data-Base/client/client");
 const Jobs = require("../Data-Base/jobs/jobs");
 
 /*Login Client*/
-
 router.post("/Login", function (req, res, next) {
   if (Object.keys(req.body).length) {
     Client.loginClient(req.body, (result, error) => {
@@ -21,7 +20,6 @@ router.post("/Login", function (req, res, next) {
 });
 
 /*Signup Client*/
-
 router.post("/Signup", function (req, res, next) {
   console.log(req.body);
   if (Object.keys(req.body).length) {
@@ -41,8 +39,8 @@ router.post("/Signup", function (req, res, next) {
     res.send({ Signup: false });
   }
 });
-/*Post Job*/
 
+/*Post Job*/
 router.post("/postJob", (req, res) => {
   if (Object.keys(req.body).length) {
     Jobs.saveJobs(req.body, (result, error) => {
@@ -66,18 +64,15 @@ router.get("/postedJobs", (req, res) => {
   })
 })
 
-
 /*Update Client Profile*/
-
 router.post("/editProfile", (req, res) => {
-  console.log(req.body)
-    Client.updateProfile(req.body, (result, error) => {
-      if (result) {
-        res.send(result)
-      } else {
-        res.send(error)
-      }
-    })
+  Client.updateProfile(req.body, (result, error) => {
+    if (result) {
+      res.send(result)
+    } else {
+      res.send(error)
+    }
+  })
 });
 
 module.exports = router;

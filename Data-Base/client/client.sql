@@ -8,7 +8,7 @@ CREATE TABLE Clients (
      Age int,
      City VARCHAR(20),
      Adresse VARCHAR(40),
-     imgUrl VARCHAR (100),
+     ImgUrl VARCHAR (100),
      PhoneNumber int,
      CONSTRAINT EmaiUn UNIQUE (Email)
 );
