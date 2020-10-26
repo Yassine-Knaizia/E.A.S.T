@@ -5,15 +5,15 @@ class Studio extends React.Component {
   }
   render() {
     return (
-      <section class="ashade-section">
-        <div class="ashade-row">
-          <div class="ashade-col col-12 align-center">
+      <section className="ashade-section">
+        <div className="ashade-row">
+          <div className="ashade-col col-12 align-center">
             <h3>
               <span>Where magic is happening</span>
               My Work
             </h3>
-            <p class="ashade-intro">
-              {" "}
+            <p className="ashade-intro">
+            
               This is the place, where I can work with lights and shadows to
               create something brilliant. I'm talking about my photo studio that
               is located at 1250 Welton St, Denver. Here we can discuss and
@@ -21,13 +21,13 @@ class Studio extends React.Component {
               atmosphere.{this.props.studioDescription}
             </p>
           </div>
-          {/* <!-- .ashade-col --> */}
+         
         </div>
-        {/* <!-- .ashade-row --> */}
-        <div class="ashade-row">
-          <div class="ashade-col col-12">
+      
+        <div className="ashade-row">
+          <div className="ashade-col col-12">
             <div
-              class="ashade-before-after"
+              className="ashade-before-after"
               data-img-before="https://www.publicdomainpictures.net/pictures/320000/velka/background-image.png"
               data-img-after="https://cdn.jpegmini.com/user/images/slider_puffin_before_mobile.jpg"
             >
@@ -37,14 +37,11 @@ class Studio extends React.Component {
                 width="1920"
                 height="1280"
               />
-            </div>
-            
-            
-            {/* <!-- .ashade-before-after --> */}
+            </div> 
           </div>
-          {/* <!-- .ashade-col --> */}
+         
         </div>
-        {/* <!-- .ashade-row --> */}
+       
       </section>
     );
   }

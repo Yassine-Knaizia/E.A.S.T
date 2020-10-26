@@ -1,38 +1,53 @@
+  
 import React from "react";
 import Footer from "../footer.jsx";
 import axios from "axios";
+import { connect } from "react-redux";
 
 class PostJob extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      defaultUrl: "img/services/thmb-nature.png",
+      defaultUrl: "../img/services/thmb-nature.png",
       imgUrl: "",
       jobTitle: "",
       fields: "",
       jobDescription: "",
+      user: this.props.user,
+      budget:""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(e) {
+    console.log(this.state.user);
     e.preventDefault();
     var jobData = {
+      client_id: this.state.user.id,
       jobTitle: this.state.jobTitle,
       fields: this.state.fields,
       imgUrl: this.state.imgUrl,
       jobDescription: this.state.jobDescription,
+      budget:this.state.budget
     };
     axios
       .post("/api/clients/postJob", jobData)
       .then((data) => {
         console.log(data);
+        this.setState({
+          jobTitle: "",
+          fields: "",
+          imgUrl: "../img/services/thmb-nature.png",
+          jobDescription: "",
+          
+        }); 
+        this.props.ChangePage("/Market")
+        window.history.pushState({},null,"/Market")
       })
       .catch((e) => {
         console.error(e);
       });
   }
-
   handleChange(e) {
     var name = e.target.name;
     this.setState({
@@ -88,11 +103,11 @@ class PostJob extends React.Component {
               />
             </div>
             <div className="ashade-col col-4">
-              <select name="fields"  id="selectFiled">
+              <select name="fields" id="selectFiled">
                 <option hidden name="choose" value="select Field">
                   Select your Field
                 </option>
-                
+
                 <option name="Design" value="Design">
                   Design
                 </option>
@@ -119,6 +134,15 @@ class PostJob extends React.Component {
                 required
               />
             </div>
+            <div className="ashade-col col-4">
+              <input
+                type="number"
+                id="budget"
+                name="budget"
+                placeholder="budget"
+                required
+              />
+            </div>
           </div>
           <textarea
             name="message"
@@ -139,5 +163,10 @@ class PostJob extends React.Component {
     );
   }
 }
+const mapStateToProps = (state, ownProps) => {
+  return {
+    user:state.user
+  }
+}
 
-export default PostJob
+export default connect(mapStateToProps)(PostJob);

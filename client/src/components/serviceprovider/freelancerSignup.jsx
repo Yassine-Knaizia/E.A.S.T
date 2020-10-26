@@ -36,6 +36,8 @@ class FreelancerSignup extends React.Component {
         .post("/api/freeLancers/Signup", freelancerData)
         .then((data) => {
           console.log(data.data);
+          this.props.ChangePage("/Login")
+          window.history.pushState({},null,"/Login")
         })
         .catch((e) => {
           console.log(e);

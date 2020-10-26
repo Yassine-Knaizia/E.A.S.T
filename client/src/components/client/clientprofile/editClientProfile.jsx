@@ -1,7 +1,6 @@
-
 import React from "react";
 import axios from "axios";
-
+import {connect} from "react-redux"
 class EditClientProfile extends React.Component {
     constructor() {
         super();
@@ -29,6 +28,7 @@ class EditClientProfile extends React.Component {
             "myFile", file
         );
         var data = {
+            id:this.props.user.id,
             FirstName: this.state.firstName,
             LastName: this.state.lastName,
             Password: this.state.password,
@@ -89,9 +89,9 @@ class EditClientProfile extends React.Component {
                                 <div className="mt-5 text-center"><button className="btn btn-primary profile-button" id="editButton" type="button" onClick={this.editClientInformation} >Edit</button></div>
                             </div>
                         </div>
-                        <div>
+                        {/* <div>
                             <img className="gif" src="https://media4.giphy.com/media/5wWf7HapUvpOumiXZRK/giphy.gif" />
-                        </div>
+                        </div> */}
                         <div className="col-md-4">
                         </div>
                     </div>
@@ -101,4 +101,9 @@ class EditClientProfile extends React.Component {
     }
 }
 
-export default EditClientProfile;
+const mapStateToProps = (state, ownProps) => {
+    return {
+      user:state.user
+    }
+  }
+export default connect(mapStateToProps)(EditClientProfile);

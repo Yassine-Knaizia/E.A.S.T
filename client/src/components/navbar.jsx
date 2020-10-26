@@ -1,23 +1,39 @@
 import React from "react"
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
-  import {connect} from "react-redux"
+import {connect} from "react-redux"
+import VisitorNavbar from "./NavBar/VisitorNavBar.jsx"
+import ClientNavbar from "./NavBar/ClientNavBar.jsx"
+import FreeLancerNavbar from "./NavBar/FreelancerNavBar.jsx"
 class Navbar extends React.Component {
     constructor(props){
         super(props)
         this.state={
-            
+        NavBar:null
         }
+    }
+    static getDerivedStateFromProps(props, state){
+        if(props.user){
+          console.log(props.user)
+            if(props.user==="visitor"){
+                return {
+                    NavBar:<VisitorNavbar ChangeRoute={props.routes}/>
+                }
+            }else if(props.user==="client"){
+                return {
+                    NavBar:<ClientNavbar ChangeRoute={props.routes}/>
+                }
+            }else if(props.user==="freelancer"){
+                return {
+                    NavBar:<FreeLancerNavbar ChangeRoute={props.routes}/>
+                }
+            }
+            
+        }return null
     }
 
     render() {
       return <div>
-<Router>
-        <header id="ashade-header">
+          {this.state.NavBar}
+        {/* <header id="ashade-header">
         <div className="ashade-header-inner">
             <div className="ashade-logo-block">
                 <a href="index.html" className="ashade-logo is-retina">
@@ -28,12 +44,12 @@ class Navbar extends React.Component {
                 <nav className="ashade-nav">
                     <ul className="main-menu">
                         <li className="menu-item-has-children">
-                   <Link to="/About"> Home</Link>
+                        <a href="#"> Home</a>
     
                          
                         </li>
 						<li className="menu-item-has-children">
-                        <Link to="/About">  Works</Link>
+                        <a href="#">  Works</a> 
                             <ul className="sub-menu">
                                 <li className="menu-item-has-children">
                                     <a href="#">Ribbon</a>
@@ -152,8 +168,7 @@ class Navbar extends React.Component {
                     </a></div>
             </div>
         </div>
-    </header>
-</Router>
+    </header> */}
       </div>;
     }
   }
@@ -168,4 +183,3 @@ class Navbar extends React.Component {
   
 export default connect(mapStateToProps)(Navbar)
 
-visitorNavbar:["home","JobOffers","About","Login","signup"]

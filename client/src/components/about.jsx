@@ -41,25 +41,25 @@ class About extends React.Component {
 					<div className="ashade-row ashade-keep-on-tablet">
 						<div className="ashade-col col-3">
 							<div className="ashade-counter-item" data-delay="3000">
-								<span className="ashade-counter-label">Awards Won</span>
+								<span className="ashade-counter-label">FreeLancers-signed-in</span>
 								<span className="ashade-counter-value">25</span>
 							</div>
 						</div>
 						<div className="ashade-col col-3">
 							<div className="ashade-counter-item" data-delay="3000">
-								<span className="ashade-counter-label">Projects Done</span>
+								<span className="ashade-counter-label">Clients-Signed-in</span>
 								<span className="ashade-counter-value">67</span>
 							</div>
 						</div>
 						<div className="ashade-col col-3">
 							<div className="ashade-counter-item" data-delay="3000">
-								<span className="ashade-counter-label">Happy Clients</span>
+								<span className="ashade-counter-label">Visitors</span>
 								<span className="ashade-counter-value">211</span>
 							</div>
 						</div>
 						<div className="ashade-col col-3">
 							<div className="ashade-counter-item" data-delay="2000">
-								<span className="ashade-counter-label">Greatest Shots</span>
+								<span className="ashade-counter-label">Jobs-Posted</span>
 								<span className="ashade-counter-value">5896</span>
 							</div>
 						</div>

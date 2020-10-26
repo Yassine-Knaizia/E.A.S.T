@@ -1934,12 +1934,13 @@ ashade.content_loaded = function() {
 	ashade.layout();
 }
 
-// Firefox Back Button Fix
-window.onunload = function(){};
+// // Firefox Back Button Fix
+// window.onunload = function(){};
 
-// Safari Back Button Fix
-jQuery(window).on('pageshow', function(event) {
-    if (event.originalEvent.persisted) {
-        window.location.reload() 
-    }
-});
+// // Safari Back Button Fix
+// jQuery(window).on('pageshow', function(event) {
+//     if (event.originalEvent.persisted) {
+//         window.location.reload() 
+//     }
+// });
+

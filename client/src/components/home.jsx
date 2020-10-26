@@ -6,8 +6,8 @@ class Home extends React.Component {
     }
 
     render() {    
-      return  <div>
-        <div className="ashade-page-title-wrap">
+      return  <div >
+        <div className="ashade-page-title-wrap" >
         <h1 className="ashade-page-title">
             <span>EAST</span>
            we connect dots
@@ -28,10 +28,9 @@ class Home extends React.Component {
         <div className="ashade-home-link is-link">
         <span>FEEDBACK</span>
         <span>ABOUT US</span>
-          
+    
         </div>
       </div>
-       
        
         <div className="ashade-page-title-wrap is-inactive ">
             <h1 className="ashade-page-title">&nbsp;</h1>
