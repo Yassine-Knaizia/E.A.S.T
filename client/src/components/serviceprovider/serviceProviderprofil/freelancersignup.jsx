@@ -5,44 +5,44 @@ class FreeLancerSignUp extends React.Component {
   constructor() {
     super();
     this.state = {
-      firstName: "",
-      lastName: "",
+      FirstName: "",
+      LastName: "",
       Email: "",
-      password: "",
-      repass: "",
-      age: "",
-      field: "",
-      gender: "",
-      phoneNumber: "",
-      city: "",
+      Password: "",
+      Repass: "",
+      Age: "",
+      Field: "",
+      Gender: "",
+      PhoneNumber: "",
+      City: "",
       Adresse: "",
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.SignUp = this.SignUp.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  SignUp(e) {
+  handleClick(e) {
     e.preventDefault();
-    let clientData = {
-      FirstName: this.state.firstName,
-      LastName: this.state.lastName,
+    let freeLancerData = {
+      FirstName: this.state.FirstName,
+      LastName: this.state.LastName,
       Email: this.state.Email,
-      Password: this.state.password,
-      Gender: this.state.gender,
-      PhoneNumber: this.state.phoneNumber,
-      Age: this.state.age,
-      Field: this.state.field,
-      City: this.state.city,
+      Password: this.state.Password,
+      Gender: this.state.Gender,
+      PhoneNumber: this.state.PhoneNumber,
+      Field: this.state.Field,
+      Age: this.state.Age,
+      City: this.state.City,
       Adresse: this.state.Adresse,
     };
     if (this.state.password === this.state.repass) {
       axios
-        .post("/api/freeLancers/Signup", clientData)
+        .post("/api/freeLancers/Signup", freeLancerData)
         .then((data) => {
           console.log(data);
-          this.props.ChangePage("/FreeLancerLogin")
-          window.history.pushState({}, null, "/FreeLancerLogin")
+         this.props.ChangePage("/FreeLancerLogin")
+         window.history.pushState({},null,"/FreeLancerLogin")
         })
         .catch((e) => {
           console.log(e);
@@ -62,7 +62,7 @@ class FreeLancerSignUp extends React.Component {
       <div className="limiter">
         <div className="container-login100" >
           <div className="wrap-signup100">
-            <form className="login100-form validate-form"  onChange={this.handleChange} onSubmit={this.SignUp}>
+            <form className="login100-form validate-form"  onChange={this.handleChange} onSubmit={this.handleClick}>
               <span className="login100-form-logo">
                 <i className="zmdi zmdi-landscape"></i>
               </span>
@@ -75,6 +75,7 @@ class FreeLancerSignUp extends React.Component {
                 <input
                   className="input100"
                   type="text" name="FirstName"
+                  name="FirstName"
                   placeholder="First Name"
                   required
                 />
@@ -85,6 +86,7 @@ class FreeLancerSignUp extends React.Component {
                 <input
                   className="input100"
                   type="text" name="LastName"
+                  name="LastName"
                   placeholder="Last Name"
                   required
                 />

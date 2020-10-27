@@ -5,42 +5,42 @@ class ClientSignUp extends React.Component {
   constructor() {
     super();
     this.state = {
-      firstName: "",
-      lastName: "",
+      FirstName: "",
+      LastName: "",
       Email: "",
-      password: "",
-      repass: "",
-      age: "",
-      gender: "male",
-      city: "",
+      Password: "",
+      Repass: "",
+      Age: "",
+      Gender: "male",
+      City: "",
       Adresse: "",
-      phoneNumber:"",
+      PhoneNumber:"",
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.SignUp = this.SignUp.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  SignUp(e) {
+  handleClick(e) {
     e.preventDefault();
     let clientData = {
-      FirstName: this.state.firstName,
-      LastName: this.state.lastName,
+      FirstName: this.state.FirstName,
+      LastName: this.state.LastName,
       Email: this.state.Email,
-      Password: this.state.password,
-      Gender: this.state.gender,
-      PhoneNumber: this.state.phoneNumber,
-      Age: this.state.age,
-      City: this.state.city,
+      Password: this.state.Password,
+      Gender: this.state.Gender,
+      PhoneNumber: this.state.PhoneNumber,
+      Age: this.state.Age,
+      City: this.state.City,
       Adresse: this.state.Adresse,
     };
     if (this.state.password === this.state.repass) {
       axios
-        .post("/api/Clients/Signup", clientData)
+        .post("/api/clients/Signup", clientData)
         .then((data) => {
           console.log(data);
-          this.props.ChangePage("/ClientLogin")
-          window.history.pushState({}, null, "/ClientLogin")
+         this.props.ChangePage("/ClientLogin")
+         window.history.pushState({},null,"/ClientLogin")
         })
         .catch((e) => {
           console.log(e);
@@ -60,7 +60,7 @@ class ClientSignUp extends React.Component {
       <div className="limiter">
         <div className="container-login100" >
           <div className="wrap-signup100">
-            <form className="login100-form validate-form" onChange={this.handleChange} onSubmit={this.SignUp}>
+            <form className="login100-form validate-form" onChange={this.handleChange} onSubmit={this.handleClick}>
               <span className="login100-form-logo">
                 <i className="zmdi zmdi-landscape"></i>
               </span>

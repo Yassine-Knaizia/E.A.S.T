@@ -1,6 +1,5 @@
-const {connection}=require("../database")
+const {connection} =require("../database")
 var bcrypt = require('bcryptjs');
-const { get} = require("../../ServerRoutes/Client");
 var salt = bcrypt.genSaltSync(10);
 
 const loginClient= (req,callback)=>{
@@ -9,7 +8,7 @@ const loginClient= (req,callback)=>{
        connection.query(`SELECT * from Clients where Email="${req.Email}"`, function (error, results, fields) {
            if(results.length){
                userData=results[0]
-               password=results[0].password
+               password=results[0].Password
                console.log(results)
                {bcrypt.compareSync(req.Password, password)?callback({error:null,userData}):callback({error:"Wrong Password",userData:null})}
            }else{
@@ -22,7 +21,7 @@ const loginClient= (req,callback)=>{
 const SignupClient= (req,callback)=>{
     if(req.Password){
       var hash = bcrypt.hashSync(req.Password, salt);
-      var query=`INSERT INTO Clients (FirstName,LastName,Email,Password,Gender,Age,City,Adresse) values ('${req.FirstName}','${req.LastName}','${req.Email}','${hash}','${req.Gender}',${req.Age},'${req.City}','${req.Adresse}');`
+      var query=`INSERT INTO Clients (FirstName,LastName,Email,Password,Gender,PhoneNumber,Age,City,Adresse) values ('${req.FirstName}','${req.LastName}','${req.Email}','${hash}','${req.Gender}',${req.PhoneNumber},${req.Age},'${req.City}','${req.Adresse}');`
       connection.query(query, function (error, results, fields) {callback(results,error)});
     }
 
@@ -35,7 +34,7 @@ const updateProfile = async (req, callback) => {
     LastName = '${req.LastName}', 
     Adresse = '${req.Adresse}', 
     Password = '${req.Password}', 
-    imgUrl = '${req.ImgUrl}' 
+    ImgUrl = '${req.ImgUrl}' 
     WHERE id = '${req.id}' `;
      connection.query(query, (error, results, fields) => {
       callback(results, error)
