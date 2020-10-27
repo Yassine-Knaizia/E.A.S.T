@@ -22,7 +22,7 @@ const SignupFreeLancer= (req,callback)=>{
     if(req.Password){
       console.log(req)
       var hash = bcrypt.hashSync(req.Password, salt);
-      var query=`INSERT INTO Freelancers (FirstName,LastName,Email,password,Gender,Age,City,Adresse,Field) values ('${req.FirstName}','${req.LastName}','${req.Email}','${hash}','${req.Gender}',${req.Age},'${req.City}','${req.Adresse}','${req.Field}');`
+      var query=`INSERT INTO Freelancers (FirstName,LastName,Email,Password,Gender,PhoneNumber,Age,Field,City,Adresse) values ('${req.FirstName}','${req.LastName}','${req.Email}','${hash}','${req.Gender}','${req.PhoneNumber}',${req.Age},'${req.Field}','${req.City}','${req.Adresse}');`
       connection.query(query, function (error, results, fields) {
         console.log(results,error)
         callback(results,error)});

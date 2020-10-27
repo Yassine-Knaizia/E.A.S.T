@@ -47,7 +47,7 @@ class FreeLancerLogin extends React.Component {
             <div className="limiter">
             <div className="container-login100" >
                 <div className="wrap-login100">
-                    <form className="login100-form validate-form" onSubmit={this.login}>
+                    <form className="login100-form validate-form" onSubmit={this.login} onChange={this.handleChange}>
                         <span className="login100-form-logo">
                             <i className="zmdi zmdi-landscape"></i>
                         </span>
@@ -56,9 +56,9 @@ class FreeLancerLogin extends React.Component {
                             Log in
                         </span>
     
-                        <div className="wrap-input100 validate-input" onChange={this.handleChange}>
+                        <div className="wrap-input100 validate-input" >
                             <input className="input100" type="text" name="Email" placeholder="Email" />
-                            <span className="focus-input100" data-placeholder="&#xf207;"></span>
+                            <span className="focus-input100" data-placeholder="&#x2709;"></span>
                         </div>
     
                         <div className="wrap-input100 validate-input" >

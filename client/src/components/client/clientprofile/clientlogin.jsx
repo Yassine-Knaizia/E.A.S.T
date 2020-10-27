@@ -39,7 +39,6 @@ class ClientLogin extends React.Component {
         this.setState({
             [name]: e.target.value,
         });
-        console.log(this.state)
     }
 
     render() {
@@ -58,7 +57,7 @@ class ClientLogin extends React.Component {
     
                         <div className="wrap-input100 validate-input" >
                             <input className="input100" type="text" name="Email" placeholder="Email" />
-                            <span className="focus-input100" data-placeholder="&#xf004;"></span>
+                            <span className="focus-input100" data-placeholder="&#x2709;"></span>
                         </div>
     
                         <div className="wrap-input100 validate-input"  >

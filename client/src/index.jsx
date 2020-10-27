@@ -10,8 +10,8 @@ import Jobsapplied from "./components/serviceprovider/Jobsapplied.jsx"
 import PostJob from "./components/client/postjob.jsx"
 import ClientLogin from "./components/client/clientprofile/clientlogin.jsx"
 import ClientSignUp from "./components/client/clientprofile/clientsignup.jsx"
-import FreeLancerLogin from "./components/serviceprovider/serviceProviderprofil/FreeLancerLogin.jsx"
-import About from "./components/about.jsx"
+import FreeLancerLogin from "./components/serviceprovider/serviceProviderprofil/freelancerlogin.jsx"
+import FreeLancerSignUp from "./components/serviceprovider/serviceProviderprofil/freelancersignup.jsx"
 import ProfileSP from "./components/serviceprovider/serviceProviderprofil/serviceproviderprofil.jsx"
 import ClientProfile from "./components/client/clientprofile/clientprofil.jsx"
 import JobDetails from "./components/jobdetails.jsx"
@@ -62,6 +62,8 @@ class App extends React.Component {
       this.setState({page:<ClientLogin ChangePage={this.ChangePage}/>})
     }else if(pathname==="/FreeLancerLogin"){
       this.setState({page:<FreeLancerLogin ChangePage={this.ChangePage}/>})
+    }else if(pathname==="/FreeLancerSignUp"){
+      this.setState({page:<FreeLancerSignUp ChangePage={this.ChangePage}/>})
     }else if(pathname==="/profileEdit"){
       this.setState({page:<EditClientProfile/>})
     }

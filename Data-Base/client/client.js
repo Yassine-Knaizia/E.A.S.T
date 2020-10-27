@@ -22,7 +22,7 @@ const loginClient= (req,callback)=>{
 const SignupClient= (req,callback)=>{
     if(req.Password){
       var hash = bcrypt.hashSync(req.Password, salt);
-      var query=`INSERT INTO Clients (FirstName,LastName,Email,password,Gender,Age,City,Adresse) values ('${req.FirstName}','${req.LastName}','${req.Email}','${hash}','${req.Gender}',${req.Age},'${req.City}','${req.Adresse}');`
+      var query=`INSERT INTO Clients (FirstName,LastName,Email,Password,Gender,Age,City,Adresse) values ('${req.FirstName}','${req.LastName}','${req.Email}','${hash}','${req.Gender}',${req.Age},'${req.City}','${req.Adresse}');`
       connection.query(query, function (error, results, fields) {callback(results,error)});
     }
 
