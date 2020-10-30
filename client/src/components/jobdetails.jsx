@@ -37,13 +37,17 @@ if(e.target.id==elem.id){
 }
 
   retriveAppliers(){
+   
 axios({
         url: '/api/Clients/appliers',
         method: 'post',
         data:{postid:this.props.jobDetails.id}
       }).then(data=>{
         if(data.data){
-          this.setState({FreelancersApplied:data.data})
+          // this.setState({FreelancersApplied:data.data})
+          console.log(data.data)
+          this.props.ChangePage("/SeeAppliers",data.data)
+          window.history.pushState({},null,"PostedJobs/JobDetails/Appliers")
         }
       })
   }

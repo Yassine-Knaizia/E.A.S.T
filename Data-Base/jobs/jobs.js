@@ -24,4 +24,8 @@ const retriveClientPosts = (req,callback) => {
   });
 }
 
-module.exports = { saveJobs,retrieveJobs,retriveClientPosts };
+module.exports = { 
+  saveJobs,
+  retrieveJobs,
+  retriveClientPosts 
+};

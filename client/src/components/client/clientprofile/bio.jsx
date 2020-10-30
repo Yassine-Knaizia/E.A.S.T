@@ -1,127 +1,42 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import {connect} from "react-redux"
+
 class Bio extends React.Component {
   constructor(props) {
     super(props);
-   this.state={
-    selectedFile: "",
-    defaultFile : "",
-    firstName: "",
-    lastName: "",
-    phoneNumber: "",
-    adress: "",
-    password : "",
-   }
-   this.onFileChange = this.onFileChange.bind(this);
-   this.handleChange = this.handleChange.bind(this);
   }
-
-  onFileChange(event) {
-    this.setState({ selectedFile: URL.createObjectURL(event.target.files[0]) });
-};
-
-handleChange(e) {
-    var name = e.target.name;
-    this.setState({
-        [name]: e.target.value,
-    });
-}
 
   render() {
     return (
-      
-        <section className="ashade-section">
-          <div className="ashade-row ashade-row-fullheight exclude-header" style={{position: "relative", top: "80px"}}>
-            <div className="ashade-col col-6">
-              <h2>
-                <span>Client Name</span>
-                {this.props.user.FirstName}-{ this.props.user.LastName }
-                
-              </h2>
-              <div className="ashade-col col-8">
-							
-							<h6>
-								<span>Email</span>
-								{this.props.user.Email}
-							</h6>
-              <h6>
-								<span>Address</span>
-								{this.props.user.Adresse}
-							</h6>
-              <h6>
-								<span>Gender</span>
-								{this.props.user.Gender}
-							</h6>
-             
-              <h6>
-								<span>Age</span>
-								{this.props.user.Age}
-							</h6>
-						  <h6>
-								<span>City</span>
-								{this.props.user.City}
-							</h6>
-              
-							
-						
-						</div>
-
-							<div className="modal">
-  <input id="modal__trigger" type="checkbox" />
-  <label htmlFor="modal__trigger">Edit Profile</label>
-  <div className="modal__overlay">
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <div className="modal__wrap" id="editprofilecontent">
-      <label htmlFor="modal__trigger">&#10006;</label>
-                            <img id="imgedit" src={this.state.selectedFile.length ? this.state.selectedFile : this.state.defaultSrc } />
-                        <input className="file" type="file" onChange={this.onFileChange} />
-                        <div className="row mt-3" id="inputContainer" onChange={this.handleChange}>
-                                    <div className="col-md-12" id="imputsforedit"><input type="text" name="firstName" className="form-control" placeholder="Edit your First Name" />
-                                  <input type="text" name="lastName" className="form-control" placeholder="Edit your Last Name" />
-                                   <input type="text" name="password" className="form-control" placeholder="Edit your Password" />
-                                    <input type="text" name="phoneNumber" className="form-control" placeholder="Edit your Phone Number" />
-                                 <input type="text" name="adress" className="form-control" placeholder="Edit your Adress" /></div>
-                                </div>
-    </div>
+      <div className="portfoliocard">
+        <div className="coverphoto">
+        </div>
+        <div className="profile_picture">
+          <img src={this.props.imgsrc}/>
+        </div>
+        <div className="left_col">
+          <div className="followers">
+            <div className="follow_count">
+            1999
+            </div>
+    Followers
   </div>
-</div>
-
-              {/* <div className="align-right ashade-signature-wrap">
-                <img
-                  src="img/general/signature.png"
-                  alt="Signature"
-                  width="200"
-                  height="116"
-                />
-              </div> */}
+          <div className="following">
+            <div className="follow_count">
+            8
             </div>
-            
-            <div className="ashade-col col-6 align-bottom hide-on-tablet-port hide-on-phone">
-              <img id="profileimg"
-                src=" https://img.pngio.com/client-customer-manager-profile-service-support-user-icon-client-service-png-480_512.png"
-                // {this.props.profImage}
-                 
-                alt="profileImage"
-                width="1240"
-                height="1500"
-              />
-            </div>
-          </div>
-          {/* <!-- .ashade-row --> */}
-         
-        </section>
-      
+    Jobs Posting
+  </div>
+        </div>
+        <div className="right_col">
+          <h2 className="name">{this.props.firstName}-{this.props.lastName}</h2>
+          <h3 className="location">{this.props.city}</h3>
+          <ul className="contact_information">
+            <li className="mail">{this.props.email}</li>
+            <li className="mail">{this.props.jobDescription}</li>
+          </ul>
+        </div>
+      </div>
     );
   }
 }
-const mapStateToProps = (state, ownProps) => {
-  return {
-    user:state.user
-  }
-}
-
-export default connect(mapStateToProps)(Bio)
+export default Bio;

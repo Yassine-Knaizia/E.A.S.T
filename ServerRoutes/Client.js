@@ -1,10 +1,12 @@
 const express = require('express');
+const { useCallback } = require('react');
+const client = require('../Data-Base/client/client');
 var router = express.Router();
 const Client = require("../Data-Base/client/client")
 const jobs = require("../Data-Base/jobs/jobs");
 const application = require("../Data-Base/application/application")
-
 /*Login Client*/
+
 router.post('/Login', function (req, res, next) {
   if (Object.keys(req.body).length) {
     Client.loginClient(req.body, (result, error) => {
@@ -20,9 +22,10 @@ router.post('/Login', function (req, res, next) {
     res.send({ Login: false, userData: null })
   }
 });
-
 /*Signup Client*/
+
 router.post('/Signup', function (req, res, next) {
+  console.log(req.body)
   if (Object.keys(req.body).length) {
     Client.SignupClient(req.body, (result, error) => {
       if (error) {
@@ -42,7 +45,9 @@ router.post('/Signup', function (req, res, next) {
 });
 
 /*Post Job*/
+
 router.post("/postJob", (req, res) => {
+  console.log(req.body);
   if (Object.keys(req.body).length) {
     jobs.saveJobs(req.body, (result, error) => {
       if (result) {
@@ -53,16 +58,16 @@ router.post("/postJob", (req, res) => {
     })
   }
 });
-
 /*Retrive Client Posted Job*/
-router.post("/PostedJob", (req, res) => {
-  jobs.retriveClientPosts(req.body, (result) => {
+router.post("/PostedJob/:userid", (req, res) => {
+  jobs.retriveClientPosts(req.params, (result) => {
     res.send(result)
   })
 });
 
 /*Check Appliers*/
 router.post("/appliers", (req, res) => {
+  console.log(req.body)
   application.RetriveAppliers(req.body, (result => {
     res.send(result)
   }))

@@ -22,9 +22,18 @@ if(e.target.id=="Home"){
 }if(e.target.id=="Signup"){
     this.props.ChangeRoute("/Signup")
     window.history.pushState({},null,"/Signup")
-}if(e.target.id=="Login"){
-    this.props.ChangeRoute("/Login")
-    window.history.pushState({},null,"/Login")
+}if(e.target.id=="L-Client"){
+    this.props.ChangeRoute("/ClientLogin")
+    window.history.pushState({},null,"/ClientLogin")
+}if(e.target.id=="L-Freelancer"){
+    this.props.ChangeRoute("/FreelancerLogin")
+    window.history.pushState({},null,"/FreelancerLogin")
+}if(e.target.id=="S-Client"){
+    this.props.ChangeRoute("/ClientSignup")
+    window.history.pushState({},null,"/ClientSignup")
+}if(e.target.id=="S-Freelancer"){
+    this.props.ChangeRoute("/FreelancerSignup")
+    window.history.pushState({},null,"/FreelancerSignup")
 }
     }
     render() {
@@ -57,9 +66,19 @@ if(e.target.id=="Home"){
                         </li>
                         <li className="menu-item-has-children">
                             <a href="#" id="Login" onClick={this.handleclick}>Login</a>
+                            <ul className="sub-menu">
+                            <li><a href="#" id="L-Client" onClick={this.handleclick}>Client-Login</a></li>
+                            <li><a href="#" id="L-Freelancer" onClick={this.handleclick}>Freelancer-Login</a></li>
+                            </ul>
                             
                         </li>
-                        <li><a href="#" id="Signup" onClick={this.handleclick}>signup</a></li>
+                        <li>
+                            <a href="#" id="Signup" >signup</a>
+                        <ul className="sub-menu">
+                            <li><a href="#" id="S-Client" onClick={this.handleclick}>Client-signup</a></li>
+                            <li><a href="#" id="S-Freelancer" onClick={this.handleclick}>Freelancer-signup</a></li>
+                            </ul>
+                            </li>
                         <li>
 							<a href="#" className="ashade-aside-toggler">
 								<span className="ashade-aside-toggler__icon01"></span>

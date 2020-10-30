@@ -19,7 +19,7 @@ class ProfileInfo extends React.Component {
                 data-delay="3000"
                 data-percent="92"
               >
-                <span className="ashade-progress-label">Personal Sessions{this.props.skill1}</span>
+                <span className="ashade-progress-label">Personal Sessions {this.props.skill1}</span>
               </div>
             </div>
             <div className="ashade-col col-3">

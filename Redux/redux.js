@@ -1,29 +1,32 @@
 const initState={
   user:{},
-  selectedprofile:{}
+  selectedprofile:{},
+  offers:{},
 }
 
 const reducers = {
+
     updatedata:(state,action)=>{
         return {
             ...state,
             user:action.value
         }
     },
+
     selectedprofile:(state,action)=>{
       return {
         ...state,
         selectedprofile:action.value
       }
     },
+
     unselect:(state,action)=>{
       return {
         ...state,
         selectedprofile:{},
         user:action.value
       }
-    }
-
+    },
   };
 
 const rootReducer = (state = initState, action) => {

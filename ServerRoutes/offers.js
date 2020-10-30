@@ -4,16 +4,15 @@ const Jobs = require("../Data-Base/jobs/jobs");
 
 
 
-router.get('/', function(req, res, next) {
-    console.log("resived")
-    Jobs.retrieveJobs((result, error) => {
-        if(result) {
-          res.send(result)
-        } else {
-          res.send(error)
-        }
-      })
-      });
+router.get('/retrieveJobs', function (req, res, next) {
+  console.log("resived")
+  Jobs.retrieveJobs((result, error) => {
+    if (result) {
+      res.send(result)
+    } else {
+      res.send(error)
+    }
+  })
+});
 
-     
- module.exports=router
+module.exports = router

@@ -1,4 +1,72 @@
+/*
+ * Author: Shadow Themes
+ * Author URL: http://shadow-themes.com
+ * Name: Ashade Photography
+ * Version: 1.1
+ * License: Themeforest
+ *
+ * Table of Contents
+   -----------------
+	01. GENERAL
+		1.1. General
+		1.2. Overlays
+		1.3. Grid
+		1.4. Section
+		1.5. Format
+		1.6. Disable Selection
+		1.7. Ashade Cursor
+	02. TYPOGRAPHY
+	03. FORMS AND FIELDS
+	04. HEADER
+		4.1. Header
+		4.2. Logo
+		4.3. Navigation
+		4.4. Main Menu
+	05. CONTENT
+		5.1. Content
+		5.2. Page Title
+		5.3. Back Button
+			5.3.1. Back Button
+			5.3.2. Before Load State
+			5.3.3. Normal State
+			5.3.4. Hover State
+			5.3.5. Remove to Inactive State
+	06. FOOTER
+	07. ASIDE BAR
+		7.1. Aside
+		7.2. Aside Widgets
+			7.2.1. Aside Widgets
+			7.2.2. About Widget
+			7.2.3. Contacts Widget
+	08. HOME TEMPLATE
+	09. ALBUMS LISTING
+		9.1. Albums Listing
+		9.2. Albums Grid
+		9.3. Albums Carousel
+		9.4. Albums Slider
+			9.4.1. Albums Slider
+			9.4.2. Slide Button
+			9.4.3. Slide Title
+			9.4.4. Slider Navigation
+	10. ALBUMS POSTS
+		10.1. Albums Posts
+		10.2. Bricks Layout
+		10.3. Adjusted
+	11. ELEMENTS
+		11.1. Elements
+		11.2. Contact Elements
+		11.3. Services Block
+		11.4. Testimonials Grid
+		11.5. Testimonials Carousel
+		11.6. Maintenance Page
+		11.7. Ashade Kenburns
+		11.8. Counter Item
+		11.9. Ashade Before After
+ * 
+ ****************************************/
 
+/* 01. GENERAL
+   ----------- */
 * {
     box-sizing: border-box;
     outline: none;
@@ -365,8 +433,8 @@ header#ashade-header a,
 .ashade-cursor.int-grab-v.int-lightbox span.ashade-cursor-slider:before {
 	transform: translate(-40px, -15px);
 }
-.ashade-cursor.int-grab-h:.int-lightbox span.ashade-cursor-slider:after,
-.ashade-cursor.int-grab-v:.int-lightbox span.ashade-cursor-slider:after {
+.ashade-cursor.int-grab-h.int-lightbox span.ashade-cursor-slider:after,
+.ashade-cursor.int-grab-v.int-lightbox span.ashade-cursor-slider:after {
 	transform: translate(40px, -15px);
 }
 
@@ -3023,3 +3091,533 @@ margin-top: 205px;
     grid-template-columns: auto auto ;
     width: 450px;
 }
+/* /////Appliers//// */
+#appliersList{
+	margin-right: 68px;
+	margin-left: 68px;
+	top: 200px;
+	position: relative;
+	display: grid;
+	grid-template-columns: auto auto auto ;
+}
+.appliersprofilecard{
+	padding: 5px;
+	text-align: center;
+	margin-left: auto;
+	
+}
+
+#applierCard {
+	
+    height: 450px;
+    width: 300px;
+    box-shadow: 0 10px 20px black;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+	font-family: 'Abel', sans-serif;
+	margin-bottom: 35px;
+}
+
+#applierimg {
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    border-radius: 50%;
+    border: 8px solid white;
+    position: relative;
+    top: 200px;
+    margin-left: 170px;
+    box-shadow: 0 2px 15px rgb(58, 54, 54);
+    transform: rotate(-20deg);
+}
+
+#shapeApplier {
+    height: 250px;
+    width: 400px;
+    background-color: black;
+    margin-left: -20px;
+    position: relative;
+    top: -150px;
+    box-shadow: 0 2px 15px black;
+    transform: rotate(25deg);
+}
+
+#appliercardtext {
+    margin-bottom: 5px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 22px;
+	position: relative;
+	top: -98px;
+	color: #8a8686;
+}
+.applicationcardtitle{
+	font-size: 20px;
+    line-height: 35px;
+	margin: 0 0 10px 0;
+	color: #8a8686;
+}
+#CardContent {
+	position: relative;
+	top: -95px;
+ font-size:25px;
+ color: wheat;
+}
+
+@media screen and (max-width: 600px) {
+	#appliersList{
+		display: grid;
+		grid-template-columns: auto;
+		margin: 5%;
+	}
+  }
+  #applierstitle{
+	text-align: center;
+    align-items: center;
+	margin: auto;
+	position: relative;
+	top: 100px;
+  }
+
+  /* //////////////Profile */
+
+#profileInfoCard{
+	height: 50%;
+    border: solid 2px;
+	border-radius: 11px;
+	padding: 20px;
+	width: auto;
+	height: 80%;
+	text-align: center;
+	height: 100%;
+}
+
+
+.avatar {
+	margin:auto;
+	width: 200px;
+	height: 200px;
+	cursor: pointer;
+	border-radius: 50%;
+	animation: pulse 1s infinite;
+  }
+  @keyframes pulse {
+	0% {
+	  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.6);
+	  opacity: 1;
+	}
+	25% {
+	  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.6);
+	  opacity: 1;
+	}
+	50% {
+	  box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.6);
+	  opacity: 1;
+	  transform: translateY(-15px);
+	}
+	75% {
+	  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.6);
+	  opacity: 1;
+	}
+	100% {
+	  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.6);
+	  opacity: 1;
+	  transform: none;
+	}
+  }
+
+  .maginskills{
+	margin: 0 32px;
+  }
+
+  .profileinfo{
+	font-size: 21px;
+    color: black;
+	opacity: 0.65;
+	margin: 5px 0;
+  }
+
+  /* //////////////////////// */
+
+  
+.signin-card {
+	-webkit-animation: cardEnter 0.75s ease-in-out 0.5s;
+	animation: cardEnter 0.75s ease-in-out 0.5s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	opacity: 0;
+  }
+  
+  /* -- login paper styles ------------------------------ */
+  .signin-card {
+	max-width: 350px;
+	border-radius: 2px;
+	margin: 20px auto;
+	padding: 20px;   
+	background-color: #eceff1;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, .19),
+	0 6px 6px rgba(0, 0, 0, .23); 
+  }
+  
+
+  
+  /* -- font styles ------------------------------------- */
+  .display1 {
+	font-size: 28px;
+	font-weight: 100;
+	line-height: 1.2;
+	color: #757575;
+	text-transform: inherit;
+	letter-spacing: inherit;
+  }
+  
+  .subhead {
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 1.1;
+	color: #212121;
+	text-transform: inherit;
+	letter-spacing: inherit;
+  }
+  
+  /* card animation from Animate.css -------------------- */
+  @-webkit-keyframes cardEnter {
+	0%, 20%, 40%, 60%, 80%, 100% {
+	  -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+	0% {
+	  opacity: 0;
+	  -webkit-transform: scale3d(0.3, 0.3, 0.3);
+	  -ms-transform: scale3d(0.3, 0.3, 0.3);
+	  transform: scale3d(0.3, 0.3, 0.3);
+	}
+	20% {
+	  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+	  -ms-transform: scale3d(1.1, 1.1, 1.1);
+	  transform: scale3d(1.1, 1.1, 1.1);
+	}
+	40% {
+	  -webkit-transform: scale3d(0.9, 0.9, 0.9);
+	  -ms-transform: scale3d(0.9, 0.9, 0.9);
+	  transform: scale3d(0.9, 0.9, 0.9);
+	}
+	60% {
+	  opacity: 1;
+	  -webkit-transform: scale3d(1.03, 1.03, 1.03);
+	  -ms-transform: scale3d(1.03, 1.03, 1.03);
+	  transform: scale3d(1.03, 1.03, 1.03);
+	}
+	80% {
+	  -webkit-transform: scale3d(0.97, 0.97, 0.97);
+	  -ms-transform: scale3d(0.97, 0.97, 0.97);
+	  transform: scale3d(0.97, 0.97, 0.97);
+	}
+	100% {
+	  opacity: 1;
+	  -webkit-transform: scale3d(1, 1, 1);
+	  -ms-transform: scale3d(1, 1, 1);
+	  transform: scale3d(1, 1, 1);
+	}
+  }
+  @keyframes cardEnter {
+	0%, 20%, 40%, 60%, 80%, 100% {
+	  -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+	0% {
+	  opacity: 0;
+	  -webkit-transform: scale3d(0.3, 0.3, 0.3);
+	  -ms-transform: scale3d(0.3, 0.3, 0.3);
+	  transform: scale3d(0.3, 0.3, 0.3);
+	}
+	20% {
+	  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+	  -ms-transform: scale3d(1.1, 1.1, 1.1);
+	  transform: scale3d(1.1, 1.1, 1.1);
+	}
+	40% {
+	  -webkit-transform: scale3d(0.9, 0.9, 0.9);
+	  -ms-transform: scale3d(0.9, 0.9, 0.9);
+	  transform: scale3d(0.9, 0.9, 0.9);
+	}
+	60% {
+	  opacity: 1;
+	  -webkit-transform: scale3d(1.03, 1.03, 1.03);
+	  -ms-transform: scale3d(1.03, 1.03, 1.03);
+	  transform: scale3d(1.03, 1.03, 1.03);
+	}
+	80% {
+	  -webkit-transform: scale3d(0.97, 0.97, 0.97);
+	  -ms-transform: scale3d(0.97, 0.97, 0.97);
+	  transform: scale3d(0.97, 0.97, 0.97);
+	}
+	100% {
+	  opacity: 1;
+	  -webkit-transform: scale3d(1, 1, 1);
+	  -ms-transform: scale3d(1, 1, 1);
+	  transform: scale3d(1, 1, 1);
+	}
+  }
+
+  .loginstyle{
+	margin-top: 100px;
+    background: linear-gradient(45deg, black, transparent);
+    text-align: center;
+  }
+  .loginimg{
+	margin:auto
+  }
+  .logintextcolor{
+	  color: #cbc4c4;
+  }
+
+  #GoogleBtn{
+	  background-image: url("https://shobhitpuri.com/img/posts/google-signin-button/GoogleSignUpDark.png");
+  }
+
+
+  /* Card Client Profile -------------------- */
+  @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,600);
+.snip1336 {
+	display: block;
+  font-family: 'Roboto', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 70px;
+  min-width: 230px;
+  max-width: 315px;
+  width: 100%;
+  color: #ffffff;
+  text-align: left;
+  line-height: 1.4em;
+  background-color: #141414;
+}
+.snip1336 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+.snip1336 img {
+  max-width: 100%;
+  vertical-align: top;
+  opacity: 0.85;
+}
+.snip1336 figcaption {
+  width: 100%;
+  background-color: #141414;
+  padding: 25px;
+  position: relative;
+}
+.snip1336 figcaption:before {
+  position: absolute;
+  content: '';
+  bottom: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 55px 0 0 400px;
+  border-color: transparent transparent transparent #141414;
+}
+.snip1336 figcaption a {
+  padding: 5px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  margin: 10px 0;
+  display: block;
+  opacity: 0.65;
+  width: 47%;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.snip1336 figcaption a:hover {
+  opacity: 1;
+}
+.snip1336 .profile {
+  border-radius: 50%;
+  position: absolute;
+  bottom: 100%;
+  left: 25px;
+  z-index: 1;
+  max-width: 90px;
+  opacity: 1;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+.snip1336 .follow {
+  margin-right: 4%;
+  border-color: #2980b9;
+  color: #2980b9;
+}
+.snip1336 h2 {
+  margin: 0 0 5px;
+  font-weight: 300;
+}
+.snip1336 h2 span {
+  display: block;
+  font-size: 0.5em;
+  color: #2980b9;
+}
+.snip1336 p {
+  margin: 0 0 10px;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+a.nostyle{
+	color:inherit;
+	text-decoration:none;
+	padding:0;
+	margin:0;
+}
+div.portfoliocard{
+	display: block;
+	position:relative;
+	height:600px;
+	width:900px;
+	background:rgba(255,255,255,1);
+	border:1px solid rgba(0,0,0,0.7);
+	box-shadow:0px -1px 3px rgba(0,0,0,0.1),
+				0px 2px 6px rgba(0,0,0,0.5);
+	border-radius:6px;
+	margin:10% auto;
+	overflow:hidden;
+	z-index:100;
+}
+div.portfoliocard div.coverphoto{
+	width:100%;
+	height:120px;
+	background:url('http://farm8.staticflickr.com/7149/6484148411_baf8d2e934_z.jpg');
+	background-position:center center;
+	border-top-right-radius:5px;
+	border-top-left-radius:5px;
+	border-bottom:1px solid rgba(0,0,0,0.1);
+	box-shadow:inset 0px 3px 20px rgba(255,255,255,0.3),
+				1px 0px 2px rgba(255,255,255,0.7);
+	z-index:99;
+}
+div.portfoliocard div.left_col, div.portfoliocard div.right_col{
+	float:left;
+	height:340px;
+}
+div.portfoliocard div.left_col{
+	width:40%;
+	padding-top:85px;
+	box-sizing:border-box;
+}
+div.portfoliocard div.right_col{
+	width:60%;
+	background:rgba(245,245,245,1);
+	border-left:1px solid rgba(230,230,230,1);
+	box-shadow:inset 0px 1px 1px rgba(255,255,255,0.7);
+	margin-left:-1px;
+	border-bottom-right-radius:5px;
+}
+div.portfoliocard div.profile_picture{
+	width:110px;
+	height:110px;
+	background:rgba(255,255,255,1);
+	position:absolute;
+	top:65px;
+	left:40px;
+	border-radius:100%;
+	background-image: url('http://cache.spreadshirt.net/Public/Common/images/profile-pic-placeholder_130x130.png');
+	background-size:100% 100%;
+	padding:7px;
+	border:4px solid rgba(255,255,255,1)
+}
+div.portfoliocard div.right_col h2.name{
+	font-size:30px;
+	font-weight:300;
+	color: rgba(30,30,30,1);
+	padding:0;
+	margin:20px 10px 0px 30px;
+}
+div.portfoliocard div.right_col h3.location{
+	font-size:15px;
+	font-weight:300;
+	color:rgba(170,170,170,1);
+	padding:0;
+	margin:-5px 10px 10px 30px;
+}
+div.portfoliocard ul.contact_information{
+	margin-top:20px;
+	padding-left:30px;
+	list-style-type:none;
+}
+div.portfoliocard ul.contact_information li{
+	height:25px;
+	width:180px;
+	line-height:25px;
+	font-weight:300;
+	font-size:15px;
+	color:rgba(140,140,140,1);
+	text-shadow:1px 1px 1px rgba(255,255,255,0.8);
+	padding:5px 0px;
+	background-repeat:no-repeat;
+	background-size:18px 18px;
+	border-bottom:1px solid rgba(0,0,0,0.1);
+	box-shadow:0px 1px 1px rgba(255,255,255,0.6);
+	cursor:default;
+}
+div.portfoliocard ul.contact_information li:before{
+	content:"";
+	width:25px;
+	height:25px;
+	display:block;
+	float:left;
+	background-position:center;
+	background-size:18px 18px;
+	background-repeat:no-repeat;
+	margin-right:5px;
+	opacity:0.7;
+}
+div.portfoliocard ul.contact_information li:hover:before{
+	opacity:1;
+}
+div.portfoliocard ul.contact_information li.work:before{
+	background-image: url('http://schulzmarcel.de/x/icons/case_24.png');
+}
+div.portfoliocard ul.contact_information li.website:before{
+	background-image: url('http://schulzmarcel.de/x/icons/globe_24.png');
+}
+div.portfoliocard ul.contact_information li.mail:before{
+	background-image: url('http://schulzmarcel.de/x/icons/paper_plane_24.png');
+}
+div.portfoliocard ul.contact_information li.phone:before{
+	background-image: url('http://schulzmarcel.de/x/icons/phone_24.png');
+}
+div.portfoliocard ul.contact_information li.resume:before{
+	background-image: url('http://schulzmarcel.de/x/icons/inbox_24.png');
+}
+div.portfoliocard div.followers, div.portfoliocard div.following{
+	margin:15px 0px 0px 35px;
+	font-weight:300;
+	font-size:16px;
+	color:rgba(30,30,30,1);
+}
+div.portfoliocard div.follow_count{
+	font-weight:400;
+	font-size:25px;
+	color:rgba(140,140,140,1);
+}
+
+.flex-container {
+	width: 800px;
+}
+
+.previousOffers {
+	text-align: center;
+	font-family: "Times New Roman", Times, serif;
+}
+
+
+

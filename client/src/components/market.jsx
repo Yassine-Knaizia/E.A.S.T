@@ -42,7 +42,7 @@ window.history.pushState({},null,"/Offers/JobDetails")
 
     componentDidMount() {
         axios({
-          url: '/api/offers',
+          url: '/api/offers/retrieveJobs',
           method: 'get',
         }).then(data => {
           this.setState({
