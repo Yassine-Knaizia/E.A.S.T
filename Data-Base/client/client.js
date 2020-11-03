@@ -11,7 +11,7 @@ const loginClient = (req, callback) => {
       userData = results[0]
       password = results[0].password
       console.log(results)
-      { bcrypt.compareSync(req.Password, password) ? callback({ error: null, userData }) : callback({ error: "Wrong Password", userData: null }) }
+      { bcrypt.compareSync(req.password, password) ? callback({ error: null, userData }) : callback({ error: "Wrong Password", userData: null }) }
     } else {
       callback({ error: "Email Unvalid", userData: null })
     }

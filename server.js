@@ -1,5 +1,5 @@
 const express = require('express')
-const { connection } = require("./Data-Base/database")
+const { connection, sql } = require("./Data-Base/database")
 const PORT = 3000
 const app = express()
 const clientRouter = require("./ServerRoutes/Client")
@@ -7,6 +7,7 @@ const FreelancerRouter = require("./ServerRoutes/FreeLancer")
 const offersRouter = require('./ServerRoutes/offers')
 const UsersRouter = require('./ServerRoutes/users')
 const Client = require("./Data-Base/client/client")
+
 
 // Body-Parser 
 const bodyParser = require("body-parser")
@@ -55,25 +56,55 @@ passport.deserializeUser(function (id, done) {
 });
 
 /*Local Strategy Implementation*/
+const authenticateUser = async (Email, password, done) => {
+  try {
+    const user = await getUserByEmail(Email);
+    if (user == null) {
+      return done(null, false, { message: "Username or Email not exist." });
+    }
+
+    if (await bcrypt.compare(password, user.password)) {
+      return done(null, user);
+    } else {
+      return done(null, false, { message: "Password incorrect" });
+    }
+  } catch (e) {
+    return done(e);
+  }
+};
+
 passport.use(new LocalStrategy({
   usernameField: 'Email',
   passwordField: 'password'
 },
-function (Email, password, done) {
-  connection.query(`SELECT * from Clients where Email="${Email}"`,
-    function (err, user) {
+ async function (Email, password, done) {
+  users=await sql(`SELECT * from Clients where Email="${Email}"`)
+  if(users.length>0){
+    await bcrypt.compare(password, user.password)) 
+      return done(null, user);
+    
+    if (users[0].password != password) {
+      return done(null, false, { message: 'Incorrect password' });
+    } else {
+
+    }
+  }
+    function (err, users) {
+      console.log('the happy user', user[0])
       if (err) {
         return done(err);
       }
       if (!user) {
-        return done(null, { message: 'Incorrect Email' });
+        return done(null, false, { message: 'Incorrect Email' });
       }
       if (user[0].password != password) {
-        return done(null, { message: 'Incorrect password' });
+        return done(null, false, { message: 'Incorrect password' });
       }
       return done(null, user);
     });
 }));
+
+
 
 
 /*Google Strategy Implementation*/

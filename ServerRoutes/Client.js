@@ -29,25 +29,31 @@ const passport = require("passport")
 /*Local Session Login*/
 router.post('/loginSession', function (req, res, next) {
   passport.authenticate('local', function (err, user) {
-      console.log("heyyyy",err, user);
-      if (user) {
-          res.send({user: user});
-      } else {
-          res.send({error: err});
-      }
+    console.log("heyyyy", err, user);
+    if (user) {
+      Client.loginClient(req.body, (result, error) => {
+        if (result.userData) {
+          result.userData.type = "client"
+          delete result.userData.password
+          res.send({ Login: true, userData: user });
+        }
+      })
+    } else {
+      res.send({ Login: false, userData: null });
+    }
   })(req, res, next);
 });
 
-  // router.post('/loginSession', function(req, res, next) {
-  //   passport.authenticate('local', function(err, user) {
-  //     if (err) { return next(err); }
-  //     if (!user) { return res.redirect('/ClientLogin'); }
-  //     req.logIn(user, function(err) {
-  //       if (err) { return next(err); }
-  //       return res.redirect('/users/' + user.Email);
-  //     });
-  //   })(req, res, next);
-  // });
+// router.post('/loginSession', function(req, res, next) {
+//   passport.authenticate('local', function(err, user) {
+//     if (err) { return next(err); }
+//     if (!user) { return res.redirect('/ClientLogin'); }
+//     req.logIn(user, function(err) {
+//       if (err) { return next(err); }
+//       return res.redirect('/users/' + user.Email);
+//     });
+//   })(req, res, next);
+// });
 /*Signup Client*/
 
 router.post('/Signup', function (req, res, next) {
