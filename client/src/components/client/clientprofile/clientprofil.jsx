@@ -25,7 +25,7 @@ class ClientProfile extends React.Component {
   }
 
   render() {
-    return <div>
+    return <div >
       <BackToTop />
       <AboutMe />
       <Bio
@@ -35,11 +35,9 @@ class ClientProfile extends React.Component {
         city={this.props.user.City}
         email={this.props.user.Email}
       />
-      <h1 className="previousOffers">Previous offers posted</h1>
       <ul>
       {this.state.jobs.map((element, key) => {
-        return <li >
-          <JobOffersProf
+        return  <JobOffersProf
           key={key}
           imgsrc={element.imgUrl}
           firstName={this.state.user.FirstName}
@@ -47,8 +45,7 @@ class ClientProfile extends React.Component {
           adresse={this.state.user.City}
           jobDescription={element.jobDescription}
         />
-        </li> 
-      })}
+      })};
       </ul>
      
           </div>

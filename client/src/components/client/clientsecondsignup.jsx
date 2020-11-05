@@ -15,7 +15,7 @@ class ClientSecondSignup extends React.Component {
       city: "Tunis",
       Adresse: "",
     };
-    // this.getData = this.getData.bind(this);
+    this.getData = this.getData.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
   
@@ -45,14 +45,14 @@ class ClientSecondSignup extends React.Component {
     }
   }
 
-  // getData(e) {
-  //   e.preventDefault();
-  //   axios
-  //     .get("/auth/google/callback")
-  //     .then((data) => {
-  //       console.log(data)
-  //     });
-  // }
+  getData(e) {
+    e.preventDefault();
+    axios
+      .get("/auth/google/callback")
+      .then((data) => {
+        console.log(data)
+      });
+  }
 
   render() {
     return (
@@ -96,7 +96,7 @@ class ClientSecondSignup extends React.Component {
                 <div id="form-login-remember" className="form-group">
                 </div>
                 <div>
-                  <button  className="btn btn-block btn-info ripple-effect" type="submit" name="Submit" alt="sign in" style={{ background: "transparent" }}>Sign in</button>
+                  <button onClick={this.getData} className="btn btn-block btn-info ripple-effect" type="submit" name="Submit" alt="sign in" style={{ background: "transparent" }}>Sign in</button>
                 </div>
               </form>
             </div>

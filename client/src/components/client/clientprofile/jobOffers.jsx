@@ -18,7 +18,6 @@ class JobOffersProf extends React.Component {
           </figcaption>
         </figure>
       </div>
-
     );
   }
 }

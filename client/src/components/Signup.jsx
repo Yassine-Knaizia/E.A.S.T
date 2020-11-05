@@ -11,11 +11,9 @@ class Signup extends React.Component {
       serviceprovider: false,
       Registration: "Register as a client",
     };
-
     this.serviceprovider = this.serviceprovider.bind(this);
     this.client = this.client.bind(this);
   }
-
   serviceprovider() {
     this.setState({
       client: false,
@@ -33,7 +31,8 @@ class Signup extends React.Component {
   }
   
   render() {
-    return (<div> 
+    return (<div>
+      
       <div>
          <div className="container">
 <div id="login" className="signin-card loginstyle">
@@ -103,7 +102,8 @@ class Signup extends React.Component {
     </div>
 </div>
       </div>;
-      <Footer />  
+      <Footer />
+     
       </div>
     );
   }

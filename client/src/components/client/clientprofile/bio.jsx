@@ -28,12 +28,14 @@ class Bio extends React.Component {
   </div>
         </div>
         <div className="right_col">
-          <h2 className="name">{this.props.firstName}-{this.props.lastName}</h2>
-          <h3 className="location">{this.props.city}</h3>
+          <h2 className="name">Full Name : {this.props.firstName}-{this.props.lastName}</h2>
+          <h3 className="location">Location : {this.props.city}</h3>
           <ul className="contact_information">
-            <li className="mail">{this.props.email}</li>
-            <li className="mail">{this.props.jobDescription}</li>
+            <li className="mail">Email : {this.props.email}</li>
           </ul>
+          <div>
+            <textarea name="biography" id="" cols="30" rows="10">I'm very happy to see you</textarea>
+          </div>
         </div>
       </div>
     );

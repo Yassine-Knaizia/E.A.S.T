@@ -3382,7 +3382,6 @@ margin-top: 205px;
   /* Card Client Profile -------------------- */
   @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,600);
 .snip1336 {
-	display: block;
   font-family: 'Roboto', Arial, sans-serif;
   position: relative;
   overflow: hidden;
@@ -3430,7 +3429,7 @@ margin-top: 205px;
   font-size: 0.7em;
   text-transform: uppercase;
   margin: 10px 0;
-  display: block;
+  display: inline-block;
   opacity: 0.65;
   width: 47%;
   text-align: center;
@@ -3479,7 +3478,6 @@ a.nostyle{
 	margin:0;
 }
 div.portfoliocard{
-	display: block;
 	position:relative;
 	height:600px;
 	width:900px;
@@ -3611,12 +3609,9 @@ div.portfoliocard div.follow_count{
 }
 
 .flex-container {
-	width: 800px;
-}
-
-.previousOffers {
-	text-align: center;
-	font-family: "Times New Roman", Times, serif;
+	position: relative;
+    top: 42px;
+    left: -9px;
 }
 
 

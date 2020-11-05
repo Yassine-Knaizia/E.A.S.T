@@ -3,74 +3,74 @@ var bcrypt = require('bcryptjs');
 const { get } = require("../../ServerRoutes/Client");
 var salt = bcrypt.genSaltSync(10);
 
+
 const loginClient = (req, callback) => {
   var userData = null
   var password = null
-  connection.query(`SELECT * from Clients where Email="${req.Email}"`, function (error, results, fields) {
+  var query = `SELECT * from Clients where Email="${req.Email}"`;
+  connection.query(query, function (error, results) {
     if (results.length) {
       userData = results[0]
       password = results[0].password
-      console.log(results)
-      { bcrypt.compareSync(req.password, password) ? callback({ error: null, userData }) : callback({ error: "Wrong Password", userData: null }) }
+      { bcrypt.compareSync(req.Password, password) ? callback({ error: null, userData }) : callback({ error: "Wrong Password", userData: null }) }
     } else {
       callback({ error: "Email Unvalid", userData: null })
     }
   });
 }
 
-//*local Session Login//*
-const findOne = (req, callback) => {
-  console.log('foundd')
+const findOne = ({Provider, ProviderId}, callback) => {
   var userData = null;
-  var query = `SELECT * from Clients where Email="${req.Email}"`;
-  connection.query(query, (error, results, fields) => {
-    if(results.length){
-      userData = results[0];
-      console.log("test", userData)
-      callback({ error: null, userData })
-    }
-  })
-}
-
-const verifyPassword = (req, callback) => {
-  console.log('passsss')
-  var userData = null;
-  var password = null;
-  var query = `SELECT * from Clients where Email="${req.Email}"`;
-  connection.query(query, (error, results, fields) => {
-    if(results.length){
-      userData = results[0];
-      password = results[0].password
-      { bcrypt.compareSync(req.Password, password) ? callback({ error: null, userData }) : callback({ error: "Wrong Password", userData: null }) }
-    } else {
-      callback({ error: "Email Unvalid", userData: null })
-    }
-  })
-}
-//*local Session Login//*
-
-
-
-//*Google Strategy Login//*
-const googleLogin = (req, callback) => {
-  var query1 = `SELECT * from Clients where Email="${req._json.email}"`
-  connection.query(query1, (error, results, fields) => {
-    callback(results, error)
-  })
-}
-
-const findById = (id, callback) => {
-  var userData = null;
-  var query = `SELECT * from Clients where id="${id}"`;
+  var query = `SELECT * from Clients where ProviderId="${ProviderId}" && Provider='${Provider}'`;
   connection.query(query, (error, results) => {
     if(results.length){
+      console.log(results)
       userData = results[0];
-      console.log("test", userData)
-      callback(error,{  userData })
+      callback({ error: null, userData })
+    } else {
+      callback({error , userData : null})
     }
   })
 }
-//*Google Strategy Login//*
+
+const create = ({Username, Email, Provider, ProviderId}, callback) => {
+  var query = `Insert into Clients (Username, Email, Provider, ProviderId) values ('${Username}','${Email}','${Provider}','${ProviderId}')`
+  connection.query(query, (error, results) => {
+     callback(results, error) ;
+  })
+}
+ 
+const findOrCreate = ({Username, Email, Provider, ProviderId}, callback) => {
+  var userData = null;
+  findOne({Provider,ProviderId}, (error, results) => {
+    if(results){
+      userData = results[0];
+      callback({error : null, userData })     
+    } else {
+      create({Username, Email, Provider, ProviderId}, (error, results) => {
+        if(results){
+          userData = results[0];
+          callback({error : null, userData })
+        } else {
+          callback({error , userData : null})
+        }
+      })
+    }
+  })
+}
+
+const findById = (req, callback) => {
+  var userData = null;
+  var query = `Select * from clients where id='${req.id}'`
+  connection.query(query, (error, results) => {
+    if(results){
+      userData = results[0];
+      callback({error : null, userData})
+    } else {
+      callback({error, userData : null})
+    }
+  })
+}
 
 const SignupClient = (req, callback) => {
   if (req.Password) {
@@ -99,11 +99,11 @@ const updateProfile = async (req, callback) => {
   }
 }
 
-const retriveClient = (req, callback) => {
+const retriveClient = (req,callback) => {
   var query = `Select * from clients where client_id=${req.userid}`;
   connection.query(query, (error, results, fields) => {
-    // callback(results, error)
-    callback(results)
+      // callback(results, error)
+     callback(results)
   });
 }
 
@@ -112,8 +112,7 @@ module.exports = {
   SignupClient,
   updateProfile,
   retriveClient,
-  googleLogin,
+  findOrCreate,
+  findById,
   findOne,
-  verifyPassword,
-  findById
 }

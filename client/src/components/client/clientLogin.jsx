@@ -14,33 +14,33 @@ class ClientLogin extends React.Component {
 
     this.serviceprovider = this.serviceprovider.bind(this)
     this.client = this.client.bind(this)
-    // this.Login = this.Login.bind(this)
+    this.Login = this.Login.bind(this)
   }
 
-  // Login() {
-  //   axios({
-  //     url: '/api/clients/Login',
-  //     method: 'post',
-  //     data: {
-  //       Email: this.state.Email,
-  //       Password: this.state.Password
-  //     }
-  //   }).then(data => {
-  //     console.log(data.data)
-  //     if (!data.data.Login) {
-  //       alert("Check Again")
-  //     } else {
-  //       this.props.update(data.data.userData)
+  Login() {
+    axios({
+      url: '/api/clients/Login',
+      method: 'post',
+      data: {
+        Email: this.state.Email,
+        Password: this.state.Password
+      }
+    }).then(data => {
+      console.log(data.data)
+      if (!data.data.Login) {
+        alert("Check Again")
+      } else {
+        this.props.update(data.data.userData)
 
-  //       if (data.data.userData.type == "client") {
-  //         this.props.ChangeUser('client')
-  //         this.props.ChangePage("/")
-  //         window.history.pushState({}, null, "/")
-  //       }
-  //     }
-  //   }).catch(err => console.log(err))
-  //   event.preventDefault();
-  // };
+        if (data.data.userData.type == "client") {
+          this.props.ChangeUser('client')
+          this.props.ChangePage("/")
+          window.history.pushState({}, null, "/")
+        }
+      }
+    }).catch(err => console.log(err))
+    event.preventDefault();
+  };
 
   serviceprovider() {
     this.setState({ client: false, serviceprovider: true, Registration: "Login as a service-provider", Email: "", Password: "" })
@@ -59,7 +59,7 @@ class ClientLogin extends React.Component {
           </div>
           <h1 className="display1 logintextcolor">Login</h1>
 
-          <form action="/api/clients/loginSession" method="post" className="" role="form" >
+          <form action="" method="" className="" role="form" onSubmit={this.Login}>
             <div id="form-login-username" className="form-group">
               <label htmlFor="Email" className="float-label logintextcolor" >Email</label>
               <input id="username" className="form-control" name="Email" type="text" size="18" alt="login" onChange={event => { this.setState({ Email: event.target.value }) }} required />
